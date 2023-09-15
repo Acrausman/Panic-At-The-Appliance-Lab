@@ -7,6 +7,11 @@ public class playerMovement : MonoBehaviour
     public float movementSpeed;
     public float groundDrag;
 
+    public float jumpForce;
+    //public float jumpCooldown;
+    public float airMultiplier;
+    //bool readyToJump;
+
     public float playerHeight;
     public LayerMask whatIsGround;
     bool grounded;
@@ -24,15 +29,25 @@ public class playerMovement : MonoBehaviour
 
     private void Start()
     {
+        //readyToJump = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
     }
 
     private void Update()
     {
+        //Check if Grounded
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
 
-        getInput();
+        //Jump
+        if ((Input.GetButtonDown("Jump")) && grounded) rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+        //Get Inputs
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
+
         Vector3 camForward = cam.forward;
         Vector3 camRight = cam.right;
 
@@ -48,14 +63,9 @@ public class playerMovement : MonoBehaviour
         if (grounded) rb.drag = groundDrag;
         else rb.drag = 0;
 
-        rb.AddForce(newForce * movementSpeed, ForceMode.Force);
-    }
 
-
-    private void getInput()
-    {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        if (grounded) rb.AddForce(newForce * movementSpeed, ForceMode.Force);
+        else if (!grounded) rb.AddForce(newForce * movementSpeed * airMultiplier, ForceMode.Force);
     }
 
 
