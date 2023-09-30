@@ -1142,7 +1142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341e8a3bc1b410c4eaf0b4ba33501a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 7
+  movementSpeed: 2500
   groundDrag: 1
   jumpForce: 9
   airMultiplier: 0.4
@@ -1164,7 +1164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d52d0427dc2af4e943f8a687df58cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 100
   currHealth: 0
   waterAmmoReserve: 100
   sparkAmmoReserve: 150
