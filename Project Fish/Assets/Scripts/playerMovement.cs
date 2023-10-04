@@ -64,8 +64,8 @@ public class playerMovement : MonoBehaviour
         else rb.drag = 0;
 
 
-        if (grounded) rb.AddForce(newForce * movementSpeed, ForceMode.Force);
-        else if (!grounded) rb.AddForce(newForce * movementSpeed * airMultiplier, ForceMode.Force);
+        if (grounded) rb.AddForce((newForce * movementSpeed) * Time.deltaTime, ForceMode.Force);
+        else if (!grounded) rb.AddForce((newForce * movementSpeed * airMultiplier) * Time.deltaTime, ForceMode.Force);
     }
 
 
