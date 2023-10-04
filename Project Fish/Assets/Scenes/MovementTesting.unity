@@ -1164,7 +1164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d52d0427dc2af4e943f8a687df58cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 100
   currHealth: 0
   waterAmmoReserve: 100
   sparkAmmoReserve: 150
