@@ -28,7 +28,7 @@ public class playerData : MonoBehaviour
 
     void Update()
     {
-        currAmmo = currGun.ammoCapacity;
+        //currAmmo = currGun.ammoCapacity;
         
 
     }
@@ -42,14 +42,17 @@ public class playerData : MonoBehaviour
         {
             case Gun.AmmoType.light:
                 if (waterAmmoReserve - currGun.ammoCapacity >= currGun.ammoCapacity) maxAmmo = waterAmmoReserve - currGun.ammoCapacity;
+                else maxAmmo = sparkAmmoReserve;
                 break;
 
             case Gun.AmmoType.medium:
                 if (sparkAmmoReserve - currGun.ammoCapacity >= currGun.ammoCapacity) maxAmmo = sparkAmmoReserve - currGun.ammoCapacity;
+                else maxAmmo = sparkAmmoReserve;
                 break;
 
             case Gun.AmmoType.heavy:
                 if (discoAmmoReserve - currGun.ammoCapacity >= currGun.ammoCapacity) maxAmmo = discoAmmoReserve - currGun.ammoCapacity;
+                else maxAmmo = discoAmmoReserve;
                 break;
 
             default:
@@ -57,6 +60,33 @@ public class playerData : MonoBehaviour
                 break;
         }
 
+        currAmmo = currGun.ammoCapacity;
+
+    }
+
+    public void reload()
+    {
+        int nextAmount = 1;
+        for(int i = 0; i < currGun.ammoCapacity; i++)
+        {
+            if ((maxAmmo - 1 < 0)) break;
+
+            if (currAmmo + nextAmount <= currGun.ammoCapacity)
+            {
+                currAmmo++;
+                maxAmmo--;
+            }
+            else
+            {
+                break;
+            }
+        }
+        
+    }
+
+    public void spendAmmo()
+    {
+        currAmmo--;
     }
 
 }

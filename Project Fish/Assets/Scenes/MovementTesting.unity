@@ -1142,16 +1142,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 341e8a3bc1b410c4eaf0b4ba33501a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 129980400}
+  orientation: {fileID: 1212983178}
   movementSpeed: 2500
-  groundDrag: 1
+  groundDrag: 0.7
   jumpForce: 9
   airMultiplier: 0.4
   playerHeight: 3
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  orientation: {fileID: 1212983178}
-  cam: {fileID: 129980400}
 --- !u!114 &1134800892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currHealth: 0
-  waterAmmoReserve: 100
+  waterAmmoReserve: 20
   sparkAmmoReserve: 150
   discoAmmoReserve: 50
   maxAmmo: 5
@@ -1711,6 +1711,10 @@ PrefabInstance:
     - target: {fileID: 2379435620795734421, guid: 571ba44382291e9478aeb87a7ae5b6db, type: 3}
       propertyPath: m_Name
       value: TestGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318761148218201671, guid: 571ba44382291e9478aeb87a7ae5b6db, type: 3}
+      propertyPath: fireRate
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5437565479914312381, guid: 571ba44382291e9478aeb87a7ae5b6db, type: 3}
       propertyPath: m_RootOrder

@@ -23,7 +23,8 @@ public class Gun : MonoBehaviour
 
     public int ammoCapacity = 10;
 
-    public int fireRate = 1;
+    public float fireRate = 1;
 
     public int ammoPerShot = 1;
+
 }
