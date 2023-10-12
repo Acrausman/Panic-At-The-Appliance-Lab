@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5437565479914312381}
   - component: {fileID: 3318761148218201671}
   m_Layer: 0
-  m_Name: TestGun
+  m_Name: TestGun 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Gun
   gunType: 0
-  ammoType: 0
-  ammoCapacity: 10
-  fireRate: 0.4
+  ammoType: 1
+  ammoCapacity: 20
+  fireRate: 0.05
   ammoPerShot: 1
 --- !u!1 &3383461036777679182
 GameObject:
@@ -114,7 +114,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8387617026056533479, guid: aa38d7b0e367ecc4aac915dcfe957879, type: 3}
+  - {fileID: 2100000, guid: 8a47047efb0f5f1409e0b1b73e46f26c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

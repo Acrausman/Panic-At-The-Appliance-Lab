@@ -12,6 +12,10 @@ public class playerData : MonoBehaviour
     public float discoAmmoReserve;
     public float maxAmmo;
     public float currAmmo;
+    public Vector3 gunOffset;
+
+    [SerializeField]
+    List<GameObject> weaponList;
 
 
     public GameObject gunRoot;
@@ -21,7 +25,7 @@ public class playerData : MonoBehaviour
     void Start()
     {
         currHealth = maxHealth;
-        setCurrGun();
+        setCurrGun(weaponList[0]);
         
         
     }
@@ -33,9 +37,18 @@ public class playerData : MonoBehaviour
 
     }
 
-    void setCurrGun()
+    public void switchWeapon(int index)
     {
-        currGun = gunRoot.GetComponentInChildren<Gun>();
+        storeAmmo();
+        Destroy(currGun.gameObject);
+        setCurrGun(weaponList[index]);
+    }
+
+    void setCurrGun(GameObject newWeapon)
+    {
+        GameObject addedWeapon = GameObject.Instantiate(newWeapon, gunRoot.transform, worldPositionStays: false);
+        addedWeapon.transform.localPosition = gunOffset;
+        currGun = addedWeapon.GetComponent<Gun>();
         currGunAmmoType = currGun.ammoType;
 
         switch (currGunAmmoType)
@@ -62,6 +75,30 @@ public class playerData : MonoBehaviour
 
         currAmmo = currGun.ammoCapacity;
 
+    }
+
+    void storeAmmo()
+    {
+        currGunAmmoType = currGun.ammoType;
+
+        switch (currGunAmmoType)
+        {
+            case Gun.AmmoType.light:
+                waterAmmoReserve = currAmmo + maxAmmo;
+                break;
+
+            case Gun.AmmoType.medium:
+                sparkAmmoReserve = currAmmo + maxAmmo;
+                break;
+
+            case Gun.AmmoType.heavy:
+                discoAmmoReserve = currAmmo + maxAmmo;
+                break;
+
+            default:
+                waterAmmoReserve = currAmmo + maxAmmo;
+                break;
+        }
     }
 
     public void reload()

@@ -47,6 +47,28 @@ public class playerBehavior : MonoBehaviour
     private void Update()
     {
         movePlayer();
+        if (Input.GetButtonDown("Weapon 1") | Input.GetButtonDown("Weapon 2")| Input.GetButtonDown("Weapon 3"))
+        {
+            string weapInput = Input.inputString;
+            switch(weapInput)
+            {
+                case "1":
+                    data.switchWeapon(0);
+                    break;
+                
+                case "2":
+                    data.switchWeapon(1);
+                    break;
+
+                case "3":
+                    data.switchWeapon(2);
+                    break;
+
+                default:
+                    data.switchWeapon(0);
+                    break;
+            }
+        }
         if (Input.GetButton("Fire1")) fireGun();
         if (Input.GetButton("Reload")) data.reload();
 
@@ -97,6 +119,9 @@ public class playerBehavior : MonoBehaviour
             }
         }
     }
+
+
+
 
     IEnumerator gunRecharge()
     {
