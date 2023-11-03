@@ -1,4 +1,4 @@
-Shader "Supyrb/Unlit/Texture"
+Shader "ComicShader/Unlit/Texture"
 {
     Properties
     {
