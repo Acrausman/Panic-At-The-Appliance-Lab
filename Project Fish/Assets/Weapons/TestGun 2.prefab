@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Gun
-  gunType: 0
+  gunType: 1
   ammoType: 1
   ammoCapacity: 20
   fireRate: 0.05
