@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1377658474758630237}
   - component: {fileID: 9021517689560396937}
   m_Layer: 0
-  m_Name: TestGun
+  m_Name: TestGun 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,11 +49,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunBarrel: {fileID: 8785954887669704200}
   Name: Gun
-  gunType: 0
-  ammoType: 0
-  ammoCapacity: 10
-  fireRate: 0.4
-  range: 70
+  gunType: 1
+  ammoType: 1
+  ammoCapacity: 20
+  fireRate: 0.05
+  range: 25
   ammoPerShot: 1
 --- !u!120 &1377658474758630237
 LineRenderer:

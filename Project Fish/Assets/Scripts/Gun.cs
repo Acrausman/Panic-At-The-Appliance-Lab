@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    public GameObject gunBarrel;
     public string Name = "Gun";
     public enum Type
     {
@@ -25,6 +26,39 @@ public class Gun : MonoBehaviour
 
     public float fireRate = 1;
 
+    public float range = 50;
+
     public int ammoPerShot = 1;
+
+    private Camera cam;
+    private AudioSource audioSource;
+    private LineRenderer lineRenderer;
+    
+
+    private void Start()
+    {
+        lineRenderer = GetComponent<LineRenderer>();
+        audioSource = GetComponent<AudioSource>();
+        cam = GetComponentInParent<Camera>();
+    }
+
+    public void fire()
+    {
+        lineRenderer.enabled = true;
+
+        Vector3 rayOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f,0.5f,0));
+        RaycastHit hit;
+
+        lineRenderer.SetPosition(0, gunBarrel.transform.position);
+
+        if(Physics.Raycast(rayOrigin, cam.transform.forward,out hit,range))
+        {
+            lineRenderer.SetPosition(1, hit.point);
+        }
+        else
+        {
+            lineRenderer.SetPosition(1, rayOrigin + (cam.transform.forward * range));
+        }
+    }
 
 }

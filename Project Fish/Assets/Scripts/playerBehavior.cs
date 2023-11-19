@@ -127,6 +127,7 @@ public class playerBehavior : MonoBehaviour
             {
                 data.spendAmmo();
                 readyToFire = false;
+                data.currGun.fire();
                 StartCoroutine(gunRecharge());
             }
         }
