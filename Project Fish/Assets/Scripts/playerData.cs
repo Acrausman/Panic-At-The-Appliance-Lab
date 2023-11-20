@@ -51,6 +51,7 @@ public class playerData : MonoBehaviour
         currGun = addedWeapon.GetComponent<Gun>();
         currGunAmmoType = currGun.ammoType;
 
+
         switch (currGunAmmoType)
         {
             case Gun.AmmoType.light:
@@ -124,6 +125,43 @@ public class playerData : MonoBehaviour
     public void spendAmmo()
     {
         currAmmo--;
+    }
+
+    public void addAmmo(boxAmmo box, int amount)
+    {
+        switch(box.ammoType)
+        {
+            case boxAmmo.AmmoType.water:
+                print("Activated");
+                if(currGunAmmoType == Gun.AmmoType.light) maxAmmo += amount;
+                else waterAmmoReserve += amount;
+                break;
+
+            case boxAmmo.AmmoType.spark:
+                print("Activated");
+                if (currGunAmmoType == Gun.AmmoType.medium) maxAmmo += amount;
+                else sparkAmmoReserve += amount;
+                break;
+
+            case boxAmmo.AmmoType.disco:
+                print("Activated");
+                if (currGunAmmoType == Gun.AmmoType.heavy) maxAmmo += amount;
+                else discoAmmoReserve += amount;
+                break;
+            default:
+                print("Activated");
+                if (currGunAmmoType == Gun.AmmoType.light) maxAmmo += amount;
+                else waterAmmoReserve += amount;
+                break;
+        }
+    }
+
+    public void addHealth(int amount)
+    {
+        if(currHealth + amount <= maxHealth)
+        {
+            currHealth += amount;
+        }
     }
 
 }

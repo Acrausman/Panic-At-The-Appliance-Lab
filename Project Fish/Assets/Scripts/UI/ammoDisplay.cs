@@ -23,13 +23,13 @@ public class ammoDisplay : MonoBehaviour
         switch(player.currGun.ammoType)
         {
             case Gun.AmmoType.light:
-                storageText.text = player.sparkAmmoReserve.ToString();
+                storageText.text = player.waterAmmoReserve.ToString();
                 storageText.color = new Color(sparkColor.r, sparkColor.g, sparkColor.b);
                 text.color = new Color(waterColor.r, waterColor.g, waterColor.b);
                     break;
 
             case Gun.AmmoType.medium:
-                storageText.text = player.waterAmmoReserve.ToString();
+                storageText.text = player.sparkAmmoReserve.ToString();
                 storageText.color = new Color(waterColor.r, waterColor.g, waterColor.b);
                 text.color = new Color(sparkColor.r, sparkColor.g, sparkColor.b);
                 break;

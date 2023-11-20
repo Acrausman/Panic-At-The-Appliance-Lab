@@ -11381,6 +11381,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1818130446385105829, guid: 91e94bd4437545e43b0778134fca70fd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 10.51001
+      objectReference: {fileID: 0}
     - target: {fileID: 1818130446670256651, guid: 91e94bd4437545e43b0778134fca70fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11437,6 +11441,18 @@ PrefabInstance:
       propertyPath: weaponList.Array.data[1]
       value: 
       objectReference: {fileID: 2379435620795734421, guid: 5f9850764e2cd8740a849400aa004572, type: 3}
+    - target: {fileID: 1818130447675597324, guid: 91e94bd4437545e43b0778134fca70fd, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818130447919879862, guid: 91e94bd4437545e43b0778134fca70fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818130447919879862, guid: 91e94bd4437545e43b0778134fca70fd, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1818130448041107969, guid: 91e94bd4437545e43b0778134fca70fd, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
