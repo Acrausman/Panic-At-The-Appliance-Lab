@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.Audio;
 
 public class enemyBehaviorWalk : MonoBehaviour
 {
@@ -11,10 +12,14 @@ public class enemyBehaviorWalk : MonoBehaviour
     public float attackRange = 0.5f;
 
     Animator animator;
+    AudioSource audioSource;
+    public AudioClip walkSound;
+    public AudioClip attackSound;
 
     public bool idle = true;
     void Start()
     {
+        audioSource = gameObject.GetComponent<AudioSource>();
         target = GameObject.FindGameObjectWithTag("PlayerDetection");
         animator = gameObject.GetComponent<Animator>();
     }
@@ -28,7 +33,7 @@ public class enemyBehaviorWalk : MonoBehaviour
         }
         else if(!idle && Vector3.Distance(this.transform.position, target.transform.position) <= attackRange)
         {
-            attack();
+            attackPlayer();
         }
         
     }
@@ -37,12 +42,14 @@ public class enemyBehaviorWalk : MonoBehaviour
     {
         animator.SetBool("Attacking", false);
         animator.SetBool("Running", true);
+        audioSource.clip = (walkSound);
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
         transform.LookAt(target.transform);
     }
 
-    public void attack()
+    public void attackPlayer()
     {
+        audioSource.Stop();
         animator.SetBool("Attacking", true);
         animator.SetBool("Running", false);
         transform.LookAt(target.transform);

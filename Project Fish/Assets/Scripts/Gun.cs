@@ -30,6 +30,8 @@ public class Gun : MonoBehaviour
 
     public int ammoPerShot = 1;
 
+    public float damage = 20;
+
     private Camera cam;
     private AudioSource audioSource;
     private LineRenderer lineRenderer;
@@ -54,6 +56,8 @@ public class Gun : MonoBehaviour
         if(Physics.Raycast(rayOrigin, cam.transform.forward,out hit,range))
         {
             lineRenderer.SetPosition(1, hit.point);
+            enemyData hitTarget = hit.transform.gameObject.GetComponent<enemyData>();
+            if (hitTarget != null) hitTarget.takeDamage(damage);
         }
         else
         {
