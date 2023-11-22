@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerData : MonoBehaviour
 {
@@ -35,6 +36,15 @@ public class playerData : MonoBehaviour
         //currAmmo = currGun.ammoCapacity;
         
 
+    }
+
+    public void takeDamage(float amount)
+    {
+        currHealth -= amount;
+        if(currHealth <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
+        }
     }
 
     public void switchWeapon(int index)

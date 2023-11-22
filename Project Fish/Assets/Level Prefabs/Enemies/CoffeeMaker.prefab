@@ -589,7 +589,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3825999808044756179}
-  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
+  m_LocalRotation: {x: 0, y: 0.7072302, z: 0.7069834, w: 0}
   m_LocalPosition: {x: -0, y: 0.13980456, z: 0}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_ConstrainProportionsScale: 0
@@ -601,7 +601,7 @@ Transform:
   - {fileID: 8003420832813777119}
   m_Father: {fileID: 5996456650748524039}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 180, z: 0}
 --- !u!1 &3865270941175488865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,7 +1003,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   detectionDistance: 10
+  attackDamage: 10
   attackRange: 5
+  attackCooldown: 0.792
   walkSound: {fileID: 8300000, guid: e52d1e7c09702ae43bb6e658ec9cce61, type: 3}
   attackSound: {fileID: 8300000, guid: 646a3d60c63c9184eb53e22f1ecb54b4, type: 3}
   idle: 1
