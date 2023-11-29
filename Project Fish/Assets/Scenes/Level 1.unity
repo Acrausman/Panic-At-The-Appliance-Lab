@@ -643,6 +643,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60313991}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &80468500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1818130448041107970, guid: 91e94bd4437545e43b0778134fca70fd, type: 3}
+  m_PrefabInstance: {fileID: 1818130446629015035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &80468504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80468500}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d8498599b24b774faf4ae3becfac683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 799772812}
+  waterColor: {r: 0, g: 0.015686275, b: 1, a: 1}
+  sparkColor: {r: 1, g: 0.83137256, b: 0, a: 0}
+  discoColor: {r: 0.8392157, g: 0, b: 0.6745098, a: 0}
 --- !u!1 &90955708
 GameObject:
   m_ObjectHideFlags: 0
@@ -5169,6 +5190,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799285850}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &799772812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1818130447675597319, guid: 91e94bd4437545e43b0778134fca70fd, type: 3}
+  m_PrefabInstance: {fileID: 1818130446629015035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08d52d0427dc2af4e943f8a687df58cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &809467208
 GameObject:
   m_ObjectHideFlags: 0
@@ -11594,9 +11626,25 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1818130447675597319, guid: 91e94bd4437545e43b0778134fca70fd, type: 3}
+      propertyPath: sparkAmmoReserve
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818130447675597319, guid: 91e94bd4437545e43b0778134fca70fd, type: 3}
+      propertyPath: waterAmmoReserve
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818130447675597319, guid: 91e94bd4437545e43b0778134fca70fd, type: 3}
+      propertyPath: weaponList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818130447675597319, guid: 91e94bd4437545e43b0778134fca70fd, type: 3}
       propertyPath: weaponList.Array.data[1]
       value: 
       objectReference: {fileID: 2379435620795734421, guid: 5f9850764e2cd8740a849400aa004572, type: 3}
+    - target: {fileID: 1818130447675597319, guid: 91e94bd4437545e43b0778134fca70fd, type: 3}
+      propertyPath: weaponList.Array.data[2]
+      value: 
+      objectReference: {fileID: 2379435620795734421, guid: 089c76089b8db774faee2b484f366333, type: 3}
     - target: {fileID: 1818130447675597324, guid: 91e94bd4437545e43b0778134fca70fd, type: 3}
       propertyPath: m_TagString
       value: Player
