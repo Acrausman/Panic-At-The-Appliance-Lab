@@ -4,10 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class ammoDisplay : MonoBehaviour
+public class ammoReserveDisplay : MonoBehaviour
 {
     TextMeshProUGUI text;
-    public TextMeshProUGUI storageText;
     public playerData player;
     public Color waterColor;
     public Color sparkColor;
@@ -23,14 +22,12 @@ public class ammoDisplay : MonoBehaviour
         switch(player.currGun.ammoType)
         {
             case Gun.AmmoType.light:
-                storageText.text = player.sparkAmmoReserve.ToString();
-                storageText.color = new Color(sparkColor.r, sparkColor.g, sparkColor.b);
+                text.text = (player.sparkAmmoReserve.ToString());
                 text.color = new Color(waterColor.r, waterColor.g, waterColor.b);
                     break;
 
             case Gun.AmmoType.medium:
-                storageText.text = player.waterAmmoReserve.ToString();
-                storageText.color = new Color(waterColor.r, waterColor.g, waterColor.b);
+                text.text = (player.waterAmmoReserve.ToString());
                 text.color = new Color(sparkColor.r, sparkColor.g, sparkColor.b);
                 break;
 
@@ -39,11 +36,8 @@ public class ammoDisplay : MonoBehaviour
                 break;
 
             default:
-                storageText.text = player.sparkAmmoReserve.ToString();
-                storageText.color = new Color(sparkColor.r, sparkColor.g, sparkColor.b);
-                text.color = new Color(waterColor.r, waterColor.g, waterColor.b);
+                text.color = new Color(sparkColor.r, sparkColor.g, sparkColor.b);
                 break;
         }
-        text.text = (player.currAmmo.ToString() + " / " + player.maxAmmo.ToString());
     }
 }

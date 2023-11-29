@@ -31,13 +31,6 @@ public class playerData : MonoBehaviour
         
     }
 
-    void Update()
-    {
-        //currAmmo = currGun.ammoCapacity;
-        
-
-    }
-
     public void takeDamage(float amount)
     {
         currHealth -= amount;
@@ -66,17 +59,20 @@ public class playerData : MonoBehaviour
         {
             case Gun.AmmoType.light:
                 if (waterAmmoReserve - currGun.ammoCapacity >= currGun.ammoCapacity) maxAmmo = waterAmmoReserve - currGun.ammoCapacity;
-                else maxAmmo = sparkAmmoReserve;
+                else maxAmmo = waterAmmoReserve;
+                waterAmmoReserve = 0;
                 break;
 
             case Gun.AmmoType.medium:
                 if (sparkAmmoReserve - currGun.ammoCapacity >= currGun.ammoCapacity) maxAmmo = sparkAmmoReserve - currGun.ammoCapacity;
                 else maxAmmo = sparkAmmoReserve;
+                sparkAmmoReserve = 0;
                 break;
 
             case Gun.AmmoType.heavy:
                 if (discoAmmoReserve - currGun.ammoCapacity >= currGun.ammoCapacity) maxAmmo = discoAmmoReserve - currGun.ammoCapacity;
                 else maxAmmo = discoAmmoReserve;
+                discoAmmoReserve = 0;
                 break;
 
             default:

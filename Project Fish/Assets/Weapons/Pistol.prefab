@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3318761148218201671}
   - component: {fileID: 1377658474758630237}
   - component: {fileID: 9021517689560396937}
-  - component: {fileID: 127499621397554092}
+  - component: {fileID: 5741175854526547993}
   m_Layer: 0
-  m_Name: TestGun 1
+  m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,13 +49,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunBarrel: {fileID: 8785954887669704200}
-  Name: Gun
-  gunType: 1
+  Name: Pistol
+  gunType: 0
   ammoType: 0
-  ammoCapacity: 20
-  fireRate: 0.05
-  range: 25
+  ammoCapacity: 10
+  fireRate: 0.4
+  range: 70
   ammoPerShot: 1
+  damage: 20
 --- !u!120 &1377658474758630237
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -251,7 +252,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &127499621397554092
+--- !u!95 &5741175854526547993
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
