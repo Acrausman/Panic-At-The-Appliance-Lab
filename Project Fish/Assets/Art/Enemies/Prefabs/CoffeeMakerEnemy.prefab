@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 8614872726792392673}
   - component: {fileID: 532394903153599801}
   m_Layer: 0
-  m_Name: CoffeRobot
+  m_Name: CoffeeRobot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
