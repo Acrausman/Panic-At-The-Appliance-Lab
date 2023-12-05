@@ -1,8 +1,32 @@
 fileFormatVersion: 2
-guid: 55a50892818e5f441aaa3bf17485a4cb
+guid: 59f320484587ea54fab1262b2c60f365
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -6141359625283235966
+    second: rig|Arm-ShotGunAway
+  - first:
+      74: -3834801321920242645
+    second: rig|Arm-ShotGunBack
+  - first:
+      74: 8800085742953831396
+    second: rig|Arm-ShotGunReload
+  - first:
+      74: -3897264863975039038
+    second: rig|Arm-ShotGunShoot
+  - first:
+      74: 6125881596701860766
+    second: shotgun|Shotgun-Away
+  - first:
+      74: 8842001034991074082
+    second: shotgun|Shotgun-Back
+  - first:
+      74: -5998305439128360153
+    second: shotgun|Shotgun-Reload
+  - first:
+      74: 228814490176695290
+    second: shotgun|Shotgun-Shoot
   externalObjects: {}
   materials:
     materialImportMode: 2
