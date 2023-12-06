@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class Gun : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class Gun : MonoBehaviour
 
     public float damage = 20;
 
+    Animator animator;
     private Camera cam;
     private AudioSource audioSource;
     private LineRenderer lineRenderer;
@@ -42,10 +44,12 @@ public class Gun : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         audioSource = GetComponent<AudioSource>();
         cam = GetComponentInParent<Camera>();
+        animator = GetComponent<Animator>();
     }
 
     public void fire()
     {
+        animator.SetTrigger("shoot");
         lineRenderer.enabled = true;
 
         Vector3 rayOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f,0.5f,0));

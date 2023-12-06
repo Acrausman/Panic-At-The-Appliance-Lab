@@ -56,7 +56,7 @@ MonoBehaviour:
   fireRate: 0.05
   range: 25
   ammoPerShot: 1
-  damage: 20
+  damage: 4
 --- !u!120 &1377658474758630237
 LineRenderer:
   m_ObjectHideFlags: 0
