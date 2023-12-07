@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class playerData : MonoBehaviour
 {
-    public AudioClip damage;
-    public AudioClip heal1;
-    public AudioClip heal2;
+    public suitVoice voice;
 
+    public AudioClip damage;
     public float maxHealth;
     public float currHealth;
 
@@ -41,10 +40,15 @@ public class playerData : MonoBehaviour
     public void takeDamage(float amount)
     {
         audioSource.PlayOneShot(damage);
+        float healthProp = currHealth / maxHealth;
         currHealth -= amount;
         if(currHealth <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
+        }
+        else if(healthProp < 0.30)
+        {
+            voice.playLowHealth();
         }
     }
 
@@ -172,19 +176,7 @@ public class playerData : MonoBehaviour
 
     public void addHealth(int amount)
     {
-        int no = Random.Range(0,1);
-        switch(no)
-        {
-            case 0:
-                audioSource.PlayOneShot(heal1);
-                break;
-            case 1:
-                audioSource.PlayOneShot(heal2);
-                break;
-            default:
-                audioSource.PlayOneShot(heal1);
-                break;
-        }
+        voice.playHeal();
         if(currHealth + amount <= maxHealth)
         {
             currHealth += amount;
