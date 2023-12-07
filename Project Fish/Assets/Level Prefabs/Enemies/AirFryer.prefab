@@ -93,8 +93,8 @@ Transform:
   m_GameObject: {fileID: 5334195512552712126}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -1.21, z: 0}
-  m_LocalScale: {x: 4.8537, y: 4.8537, z: 4.8537}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.04, y: 2.04, z: 2.04}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5334195514011786517}
   - {fileID: 5334195513667413841}
@@ -192,7 +192,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.523
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -476,7 +476,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 7.66
-  MaxDistance: 96.7
+  MaxDistance: 181.9
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0

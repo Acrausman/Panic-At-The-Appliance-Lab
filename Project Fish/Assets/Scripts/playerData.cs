@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class playerData : MonoBehaviour
 {
+    public AudioClip damage;
+    public AudioClip heal1;
+    public AudioClip heal2;
+
     public float maxHealth;
     public float currHealth;
 
@@ -23,8 +27,11 @@ public class playerData : MonoBehaviour
     [HideInInspector]public Gun currGun;
     Gun.AmmoType currGunAmmoType;
 
+    AudioSource audioSource;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         currHealth = maxHealth;
         setCurrGun(weaponList[0]);
         
@@ -33,6 +40,7 @@ public class playerData : MonoBehaviour
 
     public void takeDamage(float amount)
     {
+        audioSource.PlayOneShot(damage);
         currHealth -= amount;
         if(currHealth <= 0)
         {
@@ -164,6 +172,19 @@ public class playerData : MonoBehaviour
 
     public void addHealth(int amount)
     {
+        int no = Random.Range(0,1);
+        switch(no)
+        {
+            case 0:
+                audioSource.PlayOneShot(heal1);
+                break;
+            case 1:
+                audioSource.PlayOneShot(heal2);
+                break;
+            default:
+                audioSource.PlayOneShot(heal1);
+                break;
+        }
         if(currHealth + amount <= maxHealth)
         {
             currHealth += amount;
