@@ -21,6 +21,8 @@ public class Gun : MonoBehaviour
         medium,
         heavy
     }
+    public int index;
+
     public AmmoType ammoType;
 
     public int ammoCapacity = 10;
@@ -32,6 +34,8 @@ public class Gun : MonoBehaviour
     public int ammoPerShot = 1;
 
     public float damage = 20;
+
+    public AudioClip sound;
 
     Animator animator;
     private Camera cam;
@@ -50,12 +54,13 @@ public class Gun : MonoBehaviour
     public void fire()
     {
         animator.SetTrigger("shoot");
-        lineRenderer.enabled = true;
+        audioSource.PlayOneShot(sound);
+        lineRenderer.enabled = false;
 
         Vector3 rayOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f,0.5f,0));
         RaycastHit hit;
 
-        lineRenderer.SetPosition(0, gunBarrel.transform.position);
+        //lineRenderer.SetPosition(0, gunBarrel.transform.position);
 
         if(Physics.Raycast(rayOrigin, cam.transform.forward,out hit,range))
         {

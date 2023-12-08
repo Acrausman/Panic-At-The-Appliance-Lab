@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 
 public class enemyBehaviorWalk : MonoBehaviour
 {
-    GameObject target;
+    static GameObject target;
     public float moveSpeed = 10;
     public float detectionDistance = 2;
     public float attackDamage = 10;

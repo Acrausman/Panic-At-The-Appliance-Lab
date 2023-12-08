@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class slidingDoor : MonoBehaviour
 {
+    public AudioClip sound;
+
     public string[] scenesToLoad;
     public string[] scenesToUnload;
     public enum openDirection
@@ -26,8 +28,11 @@ public class slidingDoor : MonoBehaviour
     bool isOpen;
     public GameObject door;
     public BoxCollider doorCollider;
+
+    AudioSource audioSource;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         isOpen = false;
         origin = door.transform.position;
         switch (direction)
@@ -70,6 +75,7 @@ public class slidingDoor : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player") && canOpen)
         {
+            audioSource.PlayOneShot(sound);
             door.GetComponent<BoxCollider>().enabled = false;
             isOpen = true;
         }
