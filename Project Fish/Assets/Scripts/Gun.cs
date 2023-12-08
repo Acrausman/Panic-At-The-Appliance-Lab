@@ -44,7 +44,7 @@ public class Gun : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         audioSource = GetComponent<AudioSource>();
         cam = GetComponentInParent<Camera>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     public void fire()
