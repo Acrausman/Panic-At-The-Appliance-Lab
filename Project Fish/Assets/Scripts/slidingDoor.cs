@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class slidingDoor : MonoBehaviour
 {
+    public string[] scenesToLoad;
+    public string[] scenesToUnload;
     public enum openDirection
     {
         up,
@@ -84,13 +87,42 @@ public class slidingDoor : MonoBehaviour
     void updateMovement(bool opening)
     {
         if(opening)
-        { 
+        {
+            loadSections();
+            unloadSections();
             door.transform.position = Vector3.MoveTowards(door.transform.position, openedPos, speed * Time.deltaTime);
         }
         else if(!opening)
         {
             door.transform.position = Vector3.MoveTowards(door.transform.position, origin, speed * Time.deltaTime);
         }
+    }
+
+    void loadSections()
+    {
+        int x = scenesToLoad.Length;
+        if(x > 0)
+        {
+            for (int i = 0; i < x; i++)
+            {
+                Scene target = SceneManager.GetSceneByName(scenesToLoad[i]);
+                if(!target.isLoaded)SceneManager.LoadScene(scenesToLoad[i], LoadSceneMode.Additive);
+            }
+        }
+    }
+
+    void unloadSections()
+    {
+        int x = scenesToUnload.Length;
+        if(x > 0)
+        {
+            for (int i = 0; i < x; i++)
+            {
+                Scene target = SceneManager.GetSceneByName(scenesToUnload[i]);
+                if(target.isLoaded)SceneManager.UnloadSceneAsync(scenesToUnload[i]);
+            }
+        }
+        
     }
 
 }
