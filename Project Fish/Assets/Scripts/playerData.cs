@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class playerData : MonoBehaviour
 {
+    public suitVoice voice;
+
+    public AudioClip damage;
     public float maxHealth;
     public float currHealth;
 
@@ -15,36 +18,50 @@ public class playerData : MonoBehaviour
     public float currAmmo;
     public Vector3 gunOffset;
 
-    [SerializeField]
-    List<GameObject> weaponList;
+    public List<GameObject> weaponList;
 
 
     public GameObject gunRoot;
     [HideInInspector]public Gun currGun;
     Gun.AmmoType currGunAmmoType;
 
+    AudioSource audioSource;
+
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         currHealth = maxHealth;
-        setCurrGun(weaponList[0]);
+        if(weaponList[0] != null) setCurrGun(weaponList[0]);
         
         
     }
 
     public void takeDamage(float amount)
     {
+        audioSource.PlayOneShot(damage);
+        float healthProp = currHealth / maxHealth;
+        print(healthProp);
         currHealth -= amount;
         if(currHealth <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
+            SceneManager.LoadScene("Level 1");
+        }
+        if(healthProp <= 0.40)
+        {
+            print("play");
+            voice.playLowHealth();
         }
     }
 
     public void switchWeapon(int index)
     {
-        storeAmmo();
-        Destroy(currGun.gameObject);
-        setCurrGun(weaponList[index]);
+        if(weaponList[index] != null)
+        {
+            storeAmmo();
+            Destroy(currGun.gameObject);
+            setCurrGun(weaponList[index]);
+        }
+
     }
 
     void setCurrGun(GameObject newWeapon)
@@ -164,6 +181,7 @@ public class playerData : MonoBehaviour
 
     public void addHealth(int amount)
     {
+        voice.playHeal();
         if(currHealth + amount <= maxHealth)
         {
             currHealth += amount;

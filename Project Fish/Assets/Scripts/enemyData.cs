@@ -16,7 +16,11 @@ public class enemyData : MonoBehaviour
     public void takeDamage(float amount)
     {
         currHealth -= amount;
-        if (currHealth <= 0) Destroy(gameObject);
+        if (currHealth <= 0)
+        {
+            if (transform.parent != null) Destroy(transform.parent.gameObject);
+            else Destroy(gameObject);
+        }
     }
 
 }

@@ -6,6 +6,36 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/Level 1/Level 1.unity
     guid: 027e87355f80dec46a35d2088644ec4c
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Movement Tutorial.unity
+    guid: c005f900b09e6af4a8097a1a6b22d4a6
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Arena 1.unity
+    guid: 5ca5f39178af78f4cb38dcaa0d43cac1
+  - enabled: 1
+    path: Assets/Scenes/Level 1/SMG Room.unity
+    guid: 9a0a498bfd389e54188b9f73a9354fbe
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Arena 2.unity
+    guid: 92e81fb4b45f3c74ca9b65405c6cb09b
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Arena 3.unity
+    guid: df7d733691cd22147856d841abbdae13
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Arena Side Room 1.unity
+    guid: fd4ed39e8180ef544b6e74d355515e15
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Arena Side Room 2.unity
+    guid: 22b55090688821045bc1fac9decaa613
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Final Leadup.unity
+    guid: 7800f3a5034d0044c8ad6c88249e3894
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Shotgun Room.unity
+    guid: abe764805a819c040b600ae21173a5a3
+  - enabled: 1
+    path: Assets/Scenes/Level 1/Victory Trigger Room.unity
+    guid: ab1c3a25e1015e24e85d47027df25b8b
   m_configObjects: {}

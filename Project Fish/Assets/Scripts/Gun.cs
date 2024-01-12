@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class Gun : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class Gun : MonoBehaviour
         medium,
         heavy
     }
+    public int index;
+
     public AmmoType ammoType;
 
     public int ammoCapacity = 10;
@@ -32,6 +35,9 @@ public class Gun : MonoBehaviour
 
     public float damage = 20;
 
+    public AudioClip sound;
+
+    Animator animator;
     private Camera cam;
     private AudioSource audioSource;
     private LineRenderer lineRenderer;
@@ -42,16 +48,19 @@ public class Gun : MonoBehaviour
         lineRenderer = GetComponent<LineRenderer>();
         audioSource = GetComponent<AudioSource>();
         cam = GetComponentInParent<Camera>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     public void fire()
     {
-        lineRenderer.enabled = true;
+        animator.SetTrigger("shoot");
+        audioSource.PlayOneShot(sound);
+        lineRenderer.enabled = false;
 
         Vector3 rayOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f,0.5f,0));
         RaycastHit hit;
 
-        lineRenderer.SetPosition(0, gunBarrel.transform.position);
+        //lineRenderer.SetPosition(0, gunBarrel.transform.position);
 
         if(Physics.Raycast(rayOrigin, cam.transform.forward,out hit,range))
         {

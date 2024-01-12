@@ -78,7 +78,6 @@ public class playerBehavior : MonoBehaviour
     {
         //Check if Grounded
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
-
         //Jump
         if ((Input.GetButtonDown("Jump")) && grounded) rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
