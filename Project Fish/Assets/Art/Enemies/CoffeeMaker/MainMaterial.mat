@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8998373382400486273
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 0
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -8,10 +21,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MainMaterial
-  m_Shader: {fileID: 4800000, guid: 27122faba825bed4b9690fd5d668f5e5, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: e29d516575fa79c4c8fde725b5dcab70, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _EMISSION
+  m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -42,7 +54,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 87017663439bff44c806e3eb0c5d285c, type: 3}
+        m_Texture: {fileID: 2800000, guid: cdc939851cc4b2849bd1c8e98e539ed1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -57,8 +69,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_ee376780445c4b86a8e324910bfad522_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2D:
+        m_Texture: {fileID: 2800000, guid: cdc939851cc4b2849bd1c8e98e539ed1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_5fa061d57270443a852ff36646b9bb58_Out_0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BUILTIN_QueueControl: 0
+    - _BUILTIN_QueueOffset: 0
     - _BumpScale: 1
     - _ColorMask: 15
     - _Culling: 2
@@ -82,6 +108,9 @@ Material:
     - _StencilFail: 0
     - _StencilOp: 0
     - _StencilZFail: 0
+    - _ToonRampOffest: 0
+    - _ToonRampSmoothness: 0
+    - _ToonRampSmootness: 0
     - _UVSec: 0
     - _WriteMask: 255
     - _ZTest: 4
@@ -89,4 +118,5 @@ Material:
     m_Colors:
     - _Color: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
     - _EmissionColor: {r: 0.11160557, g: 0.50011915, b: 0.7169812, a: 1}
+    - _ToonRampTinting: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
