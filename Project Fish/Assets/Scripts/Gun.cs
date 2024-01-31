@@ -35,6 +35,8 @@ public class Gun : MonoBehaviour
 
     public float damage = 20;
 
+    public float kickback = 10;
+
     public AudioClip sound;
 
     Animator animator;

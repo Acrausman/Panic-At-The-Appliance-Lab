@@ -127,6 +127,7 @@ public class playerBehavior : MonoBehaviour
                 data.spendAmmo();
                 readyToFire = false;
                 data.currGun.fire();
+                rb.AddForce((cam.forward * -1) * data.currGun.kickback);
                 StartCoroutine(gunRecharge());
             }
         }
