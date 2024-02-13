@@ -69,7 +69,6 @@ public class enemyBehaviorWalk : MonoBehaviour
     {
         float timeInterval = attackCooldown / 2;
         yield return new WaitForSeconds(timeInterval);
-        if(!idle && Vector3.Distance(this.transform.position, target.transform.position) <= attackRange) target.GetComponentInParent<playerData>().takeDamage(attackDamage);
         yield return new WaitForSeconds(timeInterval);
         readyToAttack = true;
 

@@ -10,6 +10,8 @@ public class playerData : MonoBehaviour
     public AudioClip damage;
     public float maxHealth;
     public float currHealth;
+    public float invTime = 1;
+    float currInv = 0;
 
     public float waterAmmoReserve;
     public float sparkAmmoReserve;
@@ -29,6 +31,7 @@ public class playerData : MonoBehaviour
 
     void Start()
     {
+        currInv = 0;
         audioSource = GetComponent<AudioSource>();
         currHealth = maxHealth;
         if(weaponList[0] != null) setCurrGun(weaponList[0]);
@@ -38,19 +41,25 @@ public class playerData : MonoBehaviour
 
     public void takeDamage(float amount)
     {
-        audioSource.PlayOneShot(damage);
-        float healthProp = currHealth / maxHealth;
-        print(healthProp);
-        currHealth -= amount;
-        if(currHealth <= 0)
+        if (currInv <= 0)
         {
-            SceneManager.LoadScene("Level 1");
+            audioSource.PlayOneShot(damage);
+            float healthProp = currHealth / maxHealth;
+            print(healthProp);
+            currHealth -= amount;
+            if (currHealth <= 0)
+            {
+                SceneManager.LoadScene("Level 1");
+            }
+            if (healthProp <= 0.40)
+            {
+                print("play");
+                voice.playLowHealth();
+            }
+            currInv = 1;
+            StartCoroutine(invincibilityPeriod());
         }
-        if(healthProp <= 0.40)
-        {
-            print("play");
-            voice.playLowHealth();
-        }
+        
     }
 
     public void switchWeapon(int index)
@@ -188,4 +197,9 @@ public class playerData : MonoBehaviour
         }
     }
 
+    IEnumerator invincibilityPeriod()
+    {
+        yield return new WaitForSeconds(invTime);
+        currInv = 0;
+    }
 }
