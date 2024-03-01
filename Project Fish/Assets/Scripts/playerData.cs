@@ -19,12 +19,15 @@ public class playerData : MonoBehaviour
     public float maxAmmo;
     public float currAmmo;
     public Vector3 gunOffset;
+    float reloadTime;
+    public bool canReload = true;
+    public bool canFire = true;
 
     public List<GameObject> weaponList;
 
 
     public GameObject gunRoot;
-    [HideInInspector]public Gun currGun;
+    public Gun currGun;
     Gun.AmmoType currGunAmmoType;
 
     AudioSource audioSource;
@@ -49,7 +52,8 @@ public class playerData : MonoBehaviour
             currHealth -= amount;
             if (currHealth <= 0)
             {
-                SceneManager.LoadScene("Level 1");
+                levelManager1 manager = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<levelManager1>();
+                manager.respawnPlayer();
             }
             if (healthProp <= 0.40)
             {
@@ -136,21 +140,33 @@ public class playerData : MonoBehaviour
 
     public void reload()
     {
-        int nextAmount = 1;
-        for(int i = 0; i < currGun.ammoCapacity; i++)
+        if(canReload)
         {
-            if ((maxAmmo - 1 < 0)) break;
+            if (currAmmo != currGun.ammoCapacity)
+            {
+                this.gameObject.GetComponent<playerBehavior>().readyToFire = false;
+                currGun.reload();
+                canReload = false;
+                StartCoroutine(reloadDelay());
+                int nextAmount = 1;
+                for (int i = 0; i < currGun.ammoCapacity; i++)
+                {
+                    if ((maxAmmo - 1 < 0)) break;
 
-            if (currAmmo + nextAmount <= currGun.ammoCapacity)
-            {
-                currAmmo++;
-                maxAmmo--;
+                    if (currAmmo + nextAmount <= currGun.ammoCapacity)
+                    {
+                        currAmmo++;
+                        maxAmmo--;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
             }
-            else
-            {
-                break;
-            }
+            
         }
+        
         
     }
 
@@ -199,7 +215,16 @@ public class playerData : MonoBehaviour
 
     IEnumerator invincibilityPeriod()
     {
+        Animator anim = currGun.GetComponent<Animator>();
+        //anim.runtimeAnimatorController.
         yield return new WaitForSeconds(invTime);
         currInv = 0;
+    }
+
+    IEnumerator reloadDelay()
+    {
+        yield return new WaitForSeconds(currGun.reloadTime);
+        this.gameObject.GetComponent<playerBehavior>().readyToFire = true;
+        canReload = true;
     }
 }

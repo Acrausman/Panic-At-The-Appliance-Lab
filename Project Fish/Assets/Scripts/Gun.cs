@@ -33,6 +33,8 @@ public class Gun : MonoBehaviour
 
     public int ammoPerShot = 1;
 
+    public float reloadTime = 3;
+
     public float damage = 20;
 
     public float kickback = 10;
@@ -74,6 +76,11 @@ public class Gun : MonoBehaviour
         {
             lineRenderer.SetPosition(1, rayOrigin + (cam.transform.forward * range));
         }
+    }
+
+    public void reload()
+    {
+        animator.SetTrigger("reload");
     }
 
 }
