@@ -7,7 +7,8 @@ public class enemySpawnPoint : MonoBehaviour
     public enum enemyType
     {
         coffeMaker,
-        airFryer
+        airFryer,
+        iron
     }
 
     public enemyType typeToSpawn;
