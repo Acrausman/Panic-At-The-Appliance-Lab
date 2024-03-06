@@ -78,6 +78,11 @@ public class Gun : MonoBehaviour
         }
     }
 
+    public void melee()
+    {
+        animator.SetTrigger("melee");
+    }
+
     public void reload()
     {
         animator.SetTrigger("reload");

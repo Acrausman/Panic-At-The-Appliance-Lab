@@ -75,6 +75,7 @@ public class playerBehavior : MonoBehaviour
         }
         if (Input.GetButton("Reload")) data.reload();
         if (Input.GetButton("Fire1")) fireGun();
+        if (Input.GetButton("Melee")) meleeAttack();
         
 
     }
@@ -169,6 +170,17 @@ public class playerBehavior : MonoBehaviour
                 StartCoroutine(gunRecharge());
             }
         }
+    }
+
+    private void meleeAttack()
+    {
+        if (readyToFire)
+        {
+            readyToFire = false;
+            data.currGun.melee();
+            StartCoroutine((gunRecharge()));
+        }
+
     }
 
 
