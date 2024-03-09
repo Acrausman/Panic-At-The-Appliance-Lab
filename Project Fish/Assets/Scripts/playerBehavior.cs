@@ -7,6 +7,7 @@ public class playerBehavior : MonoBehaviour
     //Object and Component References
     Rigidbody rb;
     [SerializeField] Transform cam;
+    [SerializeField] Transform camPos;
 
     //Script References
     playerData data;
@@ -25,9 +26,12 @@ public class playerBehavior : MonoBehaviour
     public float playerHeight;
     public LayerMask whatIsGround;
     public bool grounded;
+    public float camSpeed;
+    public float camPosDefault;
+    public float movingOffset;
 
     //Weapon Variables
-    bool readyToFire;
+    public bool readyToFire;
 
 
 
@@ -69,8 +73,10 @@ public class playerBehavior : MonoBehaviour
                     break;
             }
         }
-        if (Input.GetButton("Fire1")) fireGun();
         if (Input.GetButton("Reload")) data.reload();
+        if (Input.GetButton("Fire1")) fireGun();
+        if (Input.GetButton("Melee")) meleeAttack();
+        
 
     }
 
@@ -84,6 +90,15 @@ public class playerBehavior : MonoBehaviour
         //Get Inputs
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
+        if(horizontalInput != 0 || verticalInput != 0)
+        {
+            camMovement(true);
+        }
+        else
+        {
+            camMovement(false);
+        }
 
         //Set Directions
         Vector3 camForward = cam.forward;
@@ -101,11 +116,35 @@ public class playerBehavior : MonoBehaviour
         //Check if grounded and move
         if (grounded) rb.drag = groundDrag;
         else rb.drag = 0;
-
         if (grounded) rb.AddForce((newForce * movementSpeed) * Time.deltaTime, ForceMode.Force);
         else if (!grounded) rb.AddForce((newForce * movementSpeed * airMultiplier) * Time.deltaTime, ForceMode.Force);
 
         SpeedControl();
+    }
+
+    private void camMovement(bool moving)
+    {
+        if(moving)
+        {
+           if(camPos.localPosition.y > camPosDefault - movingOffset)
+            {
+                camPos.localPosition = Vector3.MoveTowards(camPos.localPosition, new Vector3(0, camPosDefault - movingOffset, 0), camSpeed);
+            }
+            
+        }
+        else
+        {
+            if(camPos.localPosition.y < camPosDefault)
+            {
+                camPos.localPosition = Vector3.MoveTowards(camPos.localPosition, new Vector3(0, camPosDefault, 0), camSpeed);
+            }
+            else if(camPos.localPosition.y > camPosDefault)
+            {
+                camPos.localPosition = new Vector3(0,camPosDefault,0);
+            }
+
+        }
+
     }
 
     private void SpeedControl()
@@ -133,13 +172,27 @@ public class playerBehavior : MonoBehaviour
         }
     }
 
+    private void meleeAttack()
+    {
+        if (readyToFire)
+        {
+            readyToFire = false;
+            data.currGun.melee();
+            StartCoroutine((gunRecharge()));
+        }
+
+    }
+
 
 
 
     IEnumerator gunRecharge()
     {
         yield return new WaitForSeconds(data.currGun.fireRate);
-        readyToFire = true;
+        if(this.gameObject.GetComponent<playerData>().canReload)
+        {
+            readyToFire = true;
+        }
         
     }
 

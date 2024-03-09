@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class levelManager1 : MonoBehaviour
 {
+    public GameObject player;
+
     public string firstScene;
 
     public Transform[] enemyPosArena1;
@@ -12,6 +14,10 @@ public class levelManager1 : MonoBehaviour
 
     public GameObject coffeMaker;
     public GameObject airFryer;
+
+    public GameObject[] checkpoints;
+    [HideInInspector]public int currCheckpoint = 0;
+
 
     void Start()
     {
@@ -30,6 +36,19 @@ public class levelManager1 : MonoBehaviour
 
     void despawnEnemies()
     {
+
+    }
+
+    public void respawnPlayer()
+    {
+        if(currCheckpoint <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        else
+        {
+            player.transform.position = checkpoints[currCheckpoint].transform.position;
+        }
 
     }
 }

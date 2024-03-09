@@ -6,6 +6,7 @@ public class enemySpawner : MonoBehaviour
 {
     public GameObject coffeMaker;
     public GameObject airFryer;
+    public GameObject iron;
     public enemySpawnPoint[] spawnPoints;
     bool hasSpawned;
 
@@ -34,6 +35,10 @@ public class enemySpawner : MonoBehaviour
 
                     case enemySpawnPoint.enemyType.airFryer:
                         spawnEnemy(airFryer, spawnPoints[i].transform);
+                        break;
+
+                    case enemySpawnPoint.enemyType.iron:
+                        spawnEnemy(iron, spawnPoints[i].transform);
                         break;
 
                     default:
