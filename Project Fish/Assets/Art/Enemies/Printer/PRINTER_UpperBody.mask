@@ -1,0 +1,492 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PRINTER_UpperBody
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature.0_IK
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/LowerJaw
+    m_Weight: 1
+  - m_Path: Armature.0_IK/Body/LowerJaw/LowerJaw_end
+    m_Weight: 1
+  - m_Path: Armature.0_IK/Body/MiddleFinger_IK_POLE.L.002
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/MiddleFinger_IK_POLE.L.002/MiddleFinger_IK_POLE.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/MiddleFinger_IK_POLE.L.002/MiddleFinger_IK_POLE.L/MiddleFinger_IK_POLE.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/MiddleFinger_IK_POLE.R.002
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/MiddleFinger_IK_POLE.R.002/MiddleFinger_IK_POLE.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/MiddleFinger_IK_POLE.R.002/MiddleFinger_IK_POLE.R/MiddleFinger_IK_POLE.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Mouth01
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Mouth01/Mouth02
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Mouth01/Mouth02/UpperJaw
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Mouth01/Mouth02/UpperJaw/Eye
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Mouth01/Mouth02/UpperJaw/Eye/Eye_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Mouth01/Mouth02/UpperJaw/EyeLook
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Mouth01/Mouth02/UpperJaw/EyeLook/EyeLook_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Mouth01/Mouth02/UpperJaw/LowerLid
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Mouth01/Mouth02/UpperJaw/LowerLid/LowerLid_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Mouth01/Mouth02/UpperJaw/LowerLid_CTRL
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Mouth01/Mouth02/UpperJaw/LowerLid_CTRL/LowerLid_CTRL_end
+    m_Weight: 0
+  - m_Path: 'Armature.0_IK/Body/Mouth01/Mouth02/UpperJaw/UppperLid '
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Mouth01/Mouth02/UpperJaw/UppperLid /UppperLid _end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Mouth01/Mouth02/UpperJaw/UppperLid _CTRL
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Mouth01/Mouth02/UpperJaw/UppperLid _CTRL/UppperLid
+      _CTRL_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/PinkyFinger_IK_POLE.L.002
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/PinkyFinger_IK_POLE.L.002/PinkyFinger_IK_POLE.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/PinkyFinger_IK_POLE.L.002/PinkyFinger_IK_POLE.L/PinkyFinger_IK_POLE.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/PinkyFinger_IK_POLE.R.002
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/PinkyFinger_IK_POLE.R.002/PinkyFinger_IK_POLE.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/PinkyFinger_IK_POLE.R.002/PinkyFinger_IK_POLE.R/PinkyFinger_IK_POLE.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/PointerFinger_IK_POLE.L.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/PointerFinger_IK_POLE.L.001/PointerFinger_IK_POLE.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/PointerFinger_IK_POLE.L.001/PointerFinger_IK_POLE.L/PointerFinger_IK_POLE.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/PointerFinger_IK_POLE.R.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/PointerFinger_IK_POLE.R.001/PointerFinger_IK_POLE.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/PointerFinger_IK_POLE.R.001/PointerFinger_IK_POLE.R/PointerFinger_IK_POLE.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/RingFinger_IK_POLE.L.002
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/RingFinger_IK_POLE.L.002/RingFinger_IK_POLE.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/RingFinger_IK_POLE.L.002/RingFinger_IK_POLE.L/RingFinger_IK_POLE.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/RingFinger_IK_POLE.R.002
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/RingFinger_IK_POLE.R.002/RingFinger_IK_POLE.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/RingFinger_IK_POLE.R.002/RingFinger_IK_POLE.R/RingFinger_IK_POLE.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/Fingers_CRTL.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/Fingers_CRTL.L/Fingers_CRTL.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/MiddleFinger01.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/MiddleFinger01.L/MiddleFinger02.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/MiddleFinger01.L/MiddleFinger02.L/MiddleFinger03.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/MiddleFinger01.L/MiddleFinger02.L/MiddleFinger03.L/MiddleFinger03.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/MiddleFinger01_IK.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/MiddleFinger01_IK.L/MiddleFinger02_IK.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/MiddleFinger01_IK.L/MiddleFinger02_IK.L/MiddleFinger03_IK.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/MiddleFinger01_IK.L/MiddleFinger02_IK.L/MiddleFinger03_IK.L/MiddleFinger03_IK.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/MiddleFinger_CTRL.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/MiddleFinger_CTRL.L/MiddleFinger_IK_POLE.L.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/MiddleFinger_CTRL.L/MiddleFinger_IK_POLE.L.001/MiddleFinger_IK_POLE.L.001_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PinkyFinger01.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PinkyFinger01.L/PinkyFinger02.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PinkyFinger01.L/PinkyFinger02.L/PinkyFinger03.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PinkyFinger01.L/PinkyFinger02.L/PinkyFinger03.L/PinkyFinger03.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PinkyFinger01_IK.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PinkyFinger01_IK.L/PinkyFinger02_IK.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PinkyFinger01_IK.L/PinkyFinger02_IK.L/PinkyFinger03_IK.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PinkyFinger01_IK.L/PinkyFinger02_IK.L/PinkyFinger03_IK.L/PinkyFinger03_IK.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PinkyFinger_CTRL.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PinkyFinger_CTRL.L/PinkyFinger_IK_POLE.L.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PinkyFinger_CTRL.L/PinkyFinger_IK_POLE.L.001/PinkyFinger_IK_POLE.L.001_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger01.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger01.L/PointerFinger02.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger01.L/PointerFinger02.L/PointerFinger03.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger01.L/PointerFinger02.L/PointerFinger03.L/PointerFinger03.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger01_FK.L.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger01_FK.L.001/PointerFinger02_FK.L.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger01_FK.L.001/PointerFinger02_FK.L.001/PointerFinger03_FK.L.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger01_FK.L.001/PointerFinger02_FK.L.001/PointerFinger03_FK.L.001/PointerFinger03_FK.L.001_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger01_IK.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger01_IK.L/PointerFinger02_IK.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger01_IK.L/PointerFinger02_IK.L/PointerFinger03_IK.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger01_IK.L/PointerFinger02_IK.L/PointerFinger03_IK.L/PointerFinger03_IK.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger_CONTROL.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger_CONTROL.L/PointerFinger_CONTROL.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger_CRTL.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger_CRTL.L/PointerFinger_IK_POLE.L.002
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/PointerFinger_CRTL.L/PointerFinger_IK_POLE.L.002/PointerFinger_IK_POLE.L.002_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/RingFinger01.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/RingFinger01.L/RingFinger02.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/RingFinger01.L/RingFinger02.L/RingFinger03.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/RingFinger01.L/RingFinger02.L/RingFinger03.L/RingFinger03.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/RingFinger01_IK.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/RingFinger01_IK.L/RingFinger02_IK.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/RingFinger01_IK.L/RingFinger02_IK.L/RingFinger03_IK.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/RingFinger01_IK.L/RingFinger02_IK.L/RingFinger03_IK.L/RingFinger03_IK.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/RingFinger_CTRL.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/RingFinger_CTRL.L/RingFinger_IK_POLE.L.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/RingFinger_CTRL.L/RingFinger_IK_POLE.L.001/RingFinger_IK_POLE.L.001_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/Thumb01.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/Thumb01.L/Thumb02.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/Thumb01.L/Thumb02.L/Thumb03.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.L/UpperArm.L/LowerArm.L/Wrist.L/Thumb01.L/Thumb02.L/Thumb03.L/Thumb03.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/Fingers_CRTL.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/Fingers_CRTL.R/Fingers_CRTL.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/MiddleFinger01.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/MiddleFinger01.R/MiddleFinger02.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/MiddleFinger01.R/MiddleFinger02.R/MiddleFinger03.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/MiddleFinger01.R/MiddleFinger02.R/MiddleFinger03.R/MiddleFinger03.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/MiddleFinger01_IK.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/MiddleFinger01_IK.R/MiddleFinger02_IK.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/MiddleFinger01_IK.R/MiddleFinger02_IK.R/MiddleFinger03_IK.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/MiddleFinger01_IK.R/MiddleFinger02_IK.R/MiddleFinger03_IK.R/MiddleFinger03_IK.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/MiddleFinger_CTRL.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/MiddleFinger_CTRL.R/MiddleFinger_IK_POLE.R.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/MiddleFinger_CTRL.R/MiddleFinger_IK_POLE.R.001/MiddleFinger_IK_POLE.R.001_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PinkyFinger01.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PinkyFinger01.R/PinkyFinger02.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PinkyFinger01.R/PinkyFinger02.R/PinkyFinger03.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PinkyFinger01.R/PinkyFinger02.R/PinkyFinger03.R/PinkyFinger03.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PinkyFinger01_IK.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PinkyFinger01_IK.R/PinkyFinger02_IK.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PinkyFinger01_IK.R/PinkyFinger02_IK.R/PinkyFinger03_IK.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PinkyFinger01_IK.R/PinkyFinger02_IK.R/PinkyFinger03_IK.R/PinkyFinger03_IK.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PinkyFinger_CTRL.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PinkyFinger_CTRL.R/PinkyFinger_IK_POLE.R.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PinkyFinger_CTRL.R/PinkyFinger_IK_POLE.R.001/PinkyFinger_IK_POLE.R.001_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger01.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger01.R/PointerFinger02.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger01.R/PointerFinger02.R/PointerFinger03.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger01.R/PointerFinger02.R/PointerFinger03.R/PointerFinger03.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger01_FK.R.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger01_FK.R.001/PointerFinger02_FK.R.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger01_FK.R.001/PointerFinger02_FK.R.001/PointerFinger03_FK.R.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger01_FK.R.001/PointerFinger02_FK.R.001/PointerFinger03_FK.R.001/PointerFinger03_FK.R.001_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger01_IK.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger01_IK.R/PointerFinger02_IK.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger01_IK.R/PointerFinger02_IK.R/PointerFinger03_IK.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger01_IK.R/PointerFinger02_IK.R/PointerFinger03_IK.R/PointerFinger03_IK.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger_CONTROL.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger_CONTROL.R/PointerFinger_CONTROL.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger_CRTL.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger_CRTL.R/PointerFinger_IK_POLE.R.002
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/PointerFinger_CRTL.R/PointerFinger_IK_POLE.R.002/PointerFinger_IK_POLE.R.002_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/RingFinger01.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/RingFinger01.R/RingFinger02.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/RingFinger01.R/RingFinger02.R/RingFinger03.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/RingFinger01.R/RingFinger02.R/RingFinger03.R/RingFinger03.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/RingFinger01_IK.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/RingFinger01_IK.R/RingFinger02_IK.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/RingFinger01_IK.R/RingFinger02_IK.R/RingFinger03_IK.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/RingFinger01_IK.R/RingFinger02_IK.R/RingFinger03_IK.R/RingFinger03_IK.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/RingFinger_CTRL.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/RingFinger_CTRL.R/RingFinger_IK_POLE.R.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/RingFinger_CTRL.R/RingFinger_IK_POLE.R.001/RingFinger_IK_POLE.R.001_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/Thumb01.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/Thumb01.R/Thumb02.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/Thumb01.R/Thumb02.R/Thumb03.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Shoulder.R/UpperArm.R/LowerArm.R/Wrist.R/Thumb01.R/Thumb02.R/Thumb03.R/Thumb03.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge01_TWEAKERS
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge01_TWEAKERS/Tounge01
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge01_TWEAKERS/Tounge01/Tounge01_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge02_TWEAKERS
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge02_TWEAKERS/Tounge02
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge02_TWEAKERS/Tounge02/Tounge02_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge03_FK
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge03_FK/Tounge03_TWEAKERS
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge03_FK/Tounge03_TWEAKERS/Tounge03
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge03_FK/Tounge03_TWEAKERS/Tounge03/Tounge03_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge03_FK/Tounge04_FK
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge03_FK/Tounge04_FK/Tounge04_TWEAKERS
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge03_FK/Tounge04_FK/Tounge04_TWEAKERS/Tounge04
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge03_FK/Tounge04_FK/Tounge04_TWEAKERS/Tounge04/Tounge04_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge03_FK/Tounge04_FK/Tounge05_FK
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge03_FK/Tounge04_FK/Tounge05_FK/Tounge05_TWEAKERS
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge03_FK/Tounge04_FK/Tounge05_FK/Tounge05_TWEAKERS/Tounge05
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge03_FK/Tounge04_FK/Tounge05_FK/Tounge05_TWEAKERS/Tounge05/Tounge05_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge03_FK/Tounge04_FK/Tounge05_FK/TWEAKER_TIP
+    m_Weight: 0
+  - m_Path: Armature.0_IK/Body/Tounge01_FK/Tounge02_FK/Tounge03_FK/Tounge04_FK/Tounge05_FK/TWEAKER_TIP/TWEAKER_TIP_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/ElbowIK.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/ElbowIK.L/ElbowIK.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/ElbowIK.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/ElbowIK.R/ElbowIK.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.L/MiddleFinger03_IK.L.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.L/MiddleFinger03_IK.L.001/MiddleFinger03_IK.L.001_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.L/PinkyFinger03_IK.L.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.L/PinkyFinger03_IK.L.001/PinkyFinger03_IK.L.001_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.L/PointerFinger03_IK.L.002
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.L/PointerFinger03_IK.L.002/PointerFinger03_IK.L.002_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.L/RingFinger03_IK.L.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.L/RingFinger03_IK.L.001/RingFinger03_IK.L.001_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.R/MiddleFinger03_IK.R.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.R/MiddleFinger03_IK.R.001/MiddleFinger03_IK.R.001_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.R/PinkyFinger03_IK.R.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.R/PinkyFinger03_IK.R.001/PinkyFinger03_IK.R.001_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.R/PointerFinger03_IK.R.002
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.R/PointerFinger03_IK.R.002/PointerFinger03_IK.R.002_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.R/RingFinger03_IK.R.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/HandIK.R/RingFinger03_IK.R.001/RingFinger03_IK.R.001_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/MiddleFinger_IK_CRTL.L.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/MiddleFinger_IK_CRTL.L.001/MiddleFinger_IK_CRTL.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/MiddleFinger_IK_CRTL.L.001/MiddleFinger_IK_CRTL.L/MiddleFinger_IK_CRTL.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/MiddleFinger_IK_CRTL.R.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/MiddleFinger_IK_CRTL.R.001/MiddleFinger_IK_CRTL.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/MiddleFinger_IK_CRTL.R.001/MiddleFinger_IK_CRTL.R/MiddleFinger_IK_CRTL.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/PinkyFinger_IK_CRTL.L.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/PinkyFinger_IK_CRTL.L.001/PinkyFinger_IK_CRTL.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/PinkyFinger_IK_CRTL.L.001/PinkyFinger_IK_CRTL.L/PinkyFinger_IK_CRTL.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/PinkyFinger_IK_CRTL.R.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/PinkyFinger_IK_CRTL.R.001/PinkyFinger_IK_CRTL.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/PinkyFinger_IK_CRTL.R.001/PinkyFinger_IK_CRTL.R/PinkyFinger_IK_CRTL.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/PointerFinger03_IK.L.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/PointerFinger03_IK.L.001/PointerFinger_IK_CRTL.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/PointerFinger03_IK.L.001/PointerFinger_IK_CRTL.L/PointerFinger_IK_CRTL.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/PointerFinger03_IK.R.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/PointerFinger03_IK.R.001/PointerFinger_IK_CRTL.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/PointerFinger03_IK.R.001/PointerFinger_IK_CRTL.R/PointerFinger_IK_CRTL.R_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/RingFinger_IK_CRTL.L.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/RingFinger_IK_CRTL.L.001/RingFinger_IK_CRTL.L
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/RingFinger_IK_CRTL.L.001/RingFinger_IK_CRTL.L/RingFinger_IK_CRTL.L_end
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/RingFinger_IK_CRTL.R.001
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/RingFinger_IK_CRTL.R.001/RingFinger_IK_CRTL.R
+    m_Weight: 0
+  - m_Path: Armature.0_IK/IK_Root/RingFinger_IK_CRTL.R.001/RingFinger_IK_CRTL.R/RingFinger_IK_CRTL.R_end
+    m_Weight: 0
+  - m_Path: Cone.004
+    m_Weight: 0
+  - m_Path: Cube.003
+    m_Weight: 0
+  - m_Path: Eye
+    m_Weight: 1
+  - m_Path: LowerLid
+    m_Weight: 1
+  - m_Path: Printer.002
+    m_Weight: 0
+  - m_Path: Printer.008
+    m_Weight: 0
+  - m_Path: UpperLid
+    m_Weight: 1
