@@ -15,8 +15,9 @@ public class levelManager1 : MonoBehaviour
     public GameObject coffeMaker;
     public GameObject airFryer;
 
-    public GameObject[] checkpoints;
+    public Scene[] checkpointSections;
     [HideInInspector]public int currCheckpoint = 0;
+
 
 
     void Start()
@@ -41,13 +42,14 @@ public class levelManager1 : MonoBehaviour
 
     public void respawnPlayer()
     {
-        if(currCheckpoint <= 0)
+
+        if (currCheckpoint <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else
         {
-            player.transform.position = checkpoints[currCheckpoint].transform.position;
+            
         }
 
     }
