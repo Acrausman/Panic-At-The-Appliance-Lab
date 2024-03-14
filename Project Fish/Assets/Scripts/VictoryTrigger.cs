@@ -8,5 +8,6 @@ public class VictoryTrigger : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         SceneManager.LoadScene("VictoryScene");
+        Cursor.lockState = CursorLockMode.None;
     }
 }
