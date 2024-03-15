@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class levelManager1 : MonoBehaviour
 {
     public GameObject player;
+    public GameObject playerObj;
 
+    public string mainScene;
     public string firstScene;
 
     public Transform[] enemyPosArena1;
@@ -15,10 +17,11 @@ public class levelManager1 : MonoBehaviour
     public GameObject coffeMaker;
     public GameObject airFryer;
 
-    public Scene[] checkpointSections;
-    [HideInInspector]public int currCheckpoint = 0;
+    //public GameObject[] checkpointSections;
+    public int currCheckpoint = 0;
 
-
+    public Vector3 pointToMove;
+    public string sceneToLoad;
 
     void Start()
     {
@@ -27,7 +30,7 @@ public class levelManager1 : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     void spawnEnemies()
@@ -49,8 +52,36 @@ public class levelManager1 : MonoBehaviour
         }
         else
         {
-            
+            Scene main = SceneManager.GetSceneByName(mainScene);
+            SceneManager.MoveGameObjectToScene(player, main);
+            for (int i = 0; i < SceneManager.sceneCount; i++)
+            {
+                if(SceneManager.GetSceneAt(i).name != mainScene)
+                {
+                    SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(i));
+                }
+            }
+            StartCoroutine(finishRespawn());
         }
+
+    }
+
+    IEnumerator finishRespawn()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+
+        Scene reScene = SceneManager.GetSceneByName(sceneToLoad);
+        print(reScene.IsValid().ToString());
+        print(player.name + " moving to " + reScene.name);
+        SceneManager.MoveGameObjectToScene(player, reScene);
+        playerObj.transform.localPosition = new Vector3(pointToMove.x, pointToMove.y, pointToMove.z);
+        playerObj.GetComponent<playerData>().currHealth = playerObj.GetComponent<playerData>().maxHealth;
+
+
 
     }
 }

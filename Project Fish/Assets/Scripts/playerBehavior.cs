@@ -128,14 +128,14 @@ public class playerBehavior : MonoBehaviour
         {
            if(camPos.localPosition.y > camPosDefault - movingOffset)
             {
-                print("Moving down");
+                //print("Moving down");
                 camPos.localPosition = Vector3.MoveTowards(camPos.localPosition, new Vector3(0, camPosDefault - movingOffset, 0), camSpeed);
             }
             
         }
         else
         {
-            print("Moving up");
+            //print("Moving up");
             if(camPos.localPosition.y < camPosDefault)
             {
                 camPos.localPosition = Vector3.MoveTowards(camPos.localPosition, new Vector3(0, camPosDefault, 0), camSpeed);

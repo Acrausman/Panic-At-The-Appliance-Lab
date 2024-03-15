@@ -42,6 +42,17 @@ public class playerData : MonoBehaviour
         
     }
 
+    /*
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            takeDamage(maxHealth);
+        }
+    }
+    */
+    
+
     public void takeDamage(float amount)
     {
         if (currInv <= 0)
@@ -57,7 +68,7 @@ public class playerData : MonoBehaviour
             }
             if (healthProp <= 0.40)
             {
-                print("play");
+                //print("play");
                 voice.playLowHealth();
             }
             currInv = 1;

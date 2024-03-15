@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerDetection
   - Level Manager
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
