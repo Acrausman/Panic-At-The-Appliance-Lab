@@ -23,6 +23,9 @@ public class playerData : MonoBehaviour
     public bool canReload = true;
     public bool canFire = true;
 
+    public float meleeDamage = 10;
+    public float meleeRange = 10;
+
     public List<GameObject> weaponList;
 
 

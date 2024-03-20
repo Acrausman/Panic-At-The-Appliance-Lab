@@ -78,9 +78,26 @@ public class Gun : MonoBehaviour
         }
     }
 
-    public void melee()
+    public void melee(float mDamage, float mRange)
     {
         animator.SetTrigger("melee");
+        lineRenderer.enabled = false;
+
+        Vector3 rayOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+
+        //lineRenderer.SetPosition(0, gunBarrel.transform.position);
+
+        if (Physics.Raycast(rayOrigin, cam.transform.forward, out hit, range))
+        {
+            lineRenderer.SetPosition(1, hit.point);
+            enemyData hitTarget = hit.transform.gameObject.GetComponent<enemyData>();
+            if (hitTarget != null) hitTarget.takeDamage(mDamage);
+        }
+        else
+        {
+            lineRenderer.SetPosition(1, rayOrigin + (cam.transform.forward * range));
+        }
     }
 
     public void reload()

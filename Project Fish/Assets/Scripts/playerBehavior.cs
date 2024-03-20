@@ -179,7 +179,7 @@ public class playerBehavior : MonoBehaviour
         if (readyToFire)
         {
             readyToFire = false;
-            data.currGun.melee();
+            data.currGun.melee(data.meleeDamage, data.meleeRange);
             StartCoroutine((gunRecharge()));
         }
 
