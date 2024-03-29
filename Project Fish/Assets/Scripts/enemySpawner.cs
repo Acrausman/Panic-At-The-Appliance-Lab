@@ -9,15 +9,22 @@ public class enemySpawner : MonoBehaviour
     public GameObject iron;
     public enemySpawnPoint[] spawnPoints;
     bool hasSpawned;
+    public List<GameObject> enemyRoster;
+    [HideInInspector]public int count;
+    public slidingDoor door;
 
     void Start()
     {
         hasSpawned = false;
+        count = 0;
     }
 
     void Update()
     {
-        
+        if(count == enemyRoster.Count + 1)
+        {
+            door.canOpen = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -55,6 +62,7 @@ public class enemySpawner : MonoBehaviour
     {
         Vector3 desiredPos = new Vector3(point.position.x, point.position.y, point.position.z);
         GameObject enemyToInst = Instantiate(type, desiredPos, Quaternion.identity);
+        enemyRoster.Add(enemyToInst);
 
     }
 
