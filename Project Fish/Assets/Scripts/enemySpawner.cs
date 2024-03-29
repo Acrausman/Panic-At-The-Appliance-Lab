@@ -10,7 +10,7 @@ public class enemySpawner : MonoBehaviour
     public enemySpawnPoint[] spawnPoints;
     bool hasSpawned;
     public List<GameObject> enemyRoster;
-    [HideInInspector]public int count;
+    public int count;
     public slidingDoor door;
 
     void Start()
@@ -21,7 +21,7 @@ public class enemySpawner : MonoBehaviour
 
     void Update()
     {
-        if(count == enemyRoster.Count + 1)
+        if(count >= enemyRoster.Count)
         {
             door.canOpen = true;
         }
@@ -62,7 +62,9 @@ public class enemySpawner : MonoBehaviour
     {
         Vector3 desiredPos = new Vector3(point.position.x, point.position.y, point.position.z);
         GameObject enemyToInst = Instantiate(type, desiredPos, Quaternion.identity);
+        enemyToInst.GetComponent<enemyData>().spawner = gameObject.GetComponent<enemySpawner>();
         enemyRoster.Add(enemyToInst);
+        
 
     }
 

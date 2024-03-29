@@ -31,7 +31,10 @@ public class enemyBehaviorWalk : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(this.transform.position, target.transform.position) < detectionDistance) idle = false;
+        if (Vector3.Distance(this.transform.position, target.transform.position) < detectionDistance)
+        {
+            idle = false;
+        }
         if(!idle && Vector3.Distance(this.transform.position, target.transform.position) > attackRange )
         {
             updateMovement();
