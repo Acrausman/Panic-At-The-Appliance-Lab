@@ -6,6 +6,7 @@ public class enemyData : MonoBehaviour
 {
     public float maxHealth = 40;
     public float currHealth;
+    [HideInInspector]public enemySpawner spawner;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class enemyData : MonoBehaviour
         currHealth -= amount;
         if (currHealth <= 0)
         {
+            spawner.count++;
             if (transform.parent != null) Destroy(transform.parent.gameObject);
             else Destroy(gameObject);
         }
