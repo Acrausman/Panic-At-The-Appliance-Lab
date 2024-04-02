@@ -8,7 +8,7 @@ public class enemyProjectile : MonoBehaviour
     public float speed;
     public float damage;
     public float timeActive = 5;
-    float count;
+    public float count;
 
     private void Awake()
     {
@@ -17,9 +17,9 @@ public class enemyProjectile : MonoBehaviour
 
     private void Update()
     {
-        if(timeActive > 0)
+        if(count > 0)
         {
-            count += 1 * Time.deltaTime;
+            count -= 1 * Time.deltaTime;
         }
         else
         {
