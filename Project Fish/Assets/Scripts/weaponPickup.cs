@@ -13,7 +13,7 @@ public class weaponPickup : MonoBehaviour
     {
         used = false;
         gun = weapon.GetComponent<Gun>();
-        print(weapon);
+        //print(weapon);
     }
 
     void Update()
@@ -30,7 +30,7 @@ public class weaponPickup : MonoBehaviour
                 used = true;
                 playerData data = other.GetComponentInParent<playerData>();
                 data.weaponList.Add(weapon);
-                data.switchWeapon(gun.index);
+                data.setCurrGun(data.weaponList[gun.index]);
                 Destroy(gameObject);
             }
         }

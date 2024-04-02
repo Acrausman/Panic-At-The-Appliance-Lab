@@ -57,19 +57,19 @@ public class playerBehavior : MonoBehaviour
             switch(weapInput)
             {
                 case "1":
-                    data.switchWeapon(0);
+                    if(data.weaponList[0] != null)data.switchWeapon(0);
                     break;
                 
                 case "2":
-                    data.switchWeapon(1);
+                    if (data.weaponList[1] != null)data.switchWeapon(1);
                     break;
 
                 case "3":
-                    data.switchWeapon(2);
+                    if(data.weaponList[0] != null)data.switchWeapon(2);
                     break;
 
                 default:
-                    data.switchWeapon(0);
+                    if(data.weaponList[0] != null)data.switchWeapon(0);
                     break;
             }
         }

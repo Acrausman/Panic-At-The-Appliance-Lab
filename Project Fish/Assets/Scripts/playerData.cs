@@ -40,7 +40,7 @@ public class playerData : MonoBehaviour
         currInv = 0;
         audioSource = GetComponent<AudioSource>();
         currHealth = maxHealth;
-        if(weaponList[0] != null) setCurrGun(weaponList[0]);
+        //if(weaponList[0] != null) setCurrGun(weaponList[0]);
         
         
     }
@@ -84,15 +84,20 @@ public class playerData : MonoBehaviour
     {
         if(weaponList[index] != null)
         {
+            //print("Switching weapon to " + index.ToString());
             storeAmmo();
-            Destroy(currGun.gameObject);
             setCurrGun(weaponList[index]);
         }
 
     }
 
-    void setCurrGun(GameObject newWeapon)
+    public void setCurrGun(GameObject newWeapon)
     {
+        if (currGun)
+        {
+            print("Destroyed"); 
+            Destroy(currGun.gameObject);
+        }
         GameObject addedWeapon = GameObject.Instantiate(newWeapon, gunRoot.transform, worldPositionStays: false);
         addedWeapon.transform.localPosition = gunOffset;
         currGun = addedWeapon.GetComponent<Gun>();
@@ -104,19 +109,19 @@ public class playerData : MonoBehaviour
             case Gun.AmmoType.light:
                 if (waterAmmoReserve - currGun.ammoCapacity >= currGun.ammoCapacity) maxAmmo = waterAmmoReserve - currGun.ammoCapacity;
                 else maxAmmo = waterAmmoReserve;
-                waterAmmoReserve = 0;
+                //waterAmmoReserve = 0;
                 break;
 
             case Gun.AmmoType.medium:
                 if (sparkAmmoReserve - currGun.ammoCapacity >= currGun.ammoCapacity) maxAmmo = sparkAmmoReserve - currGun.ammoCapacity;
                 else maxAmmo = sparkAmmoReserve;
-                sparkAmmoReserve = 0;
+                //sparkAmmoReserve = 0;
                 break;
 
             case Gun.AmmoType.heavy:
                 if (discoAmmoReserve - currGun.ammoCapacity >= currGun.ammoCapacity) maxAmmo = discoAmmoReserve - currGun.ammoCapacity;
                 else maxAmmo = discoAmmoReserve;
-                discoAmmoReserve = 0;
+                //discoAmmoReserve = 0;
                 break;
 
             default:
@@ -130,26 +135,30 @@ public class playerData : MonoBehaviour
 
     void storeAmmo()
     {
-        currGunAmmoType = currGun.ammoType;
-
-        switch (currGunAmmoType)
+        if(currGun != null)
         {
-            case Gun.AmmoType.light:
-                waterAmmoReserve = currAmmo + maxAmmo;
-                break;
+            currGunAmmoType = currGun.ammoType;
 
-            case Gun.AmmoType.medium:
-                sparkAmmoReserve = currAmmo + maxAmmo;
-                break;
+            switch (currGunAmmoType)
+            {
+                case Gun.AmmoType.light:
+                    waterAmmoReserve = currAmmo + maxAmmo;
+                    break;
 
-            case Gun.AmmoType.heavy:
-                discoAmmoReserve = currAmmo + maxAmmo;
-                break;
+                case Gun.AmmoType.medium:
+                    sparkAmmoReserve = currAmmo + maxAmmo;
+                    break;
 
-            default:
-                waterAmmoReserve = currAmmo + maxAmmo;
-                break;
+                case Gun.AmmoType.heavy:
+                    discoAmmoReserve = currAmmo + maxAmmo;
+                    break;
+
+                default:
+                    waterAmmoReserve = currAmmo + maxAmmo;
+                    break;
+            }
         }
+        
     }
 
     public void reload()
