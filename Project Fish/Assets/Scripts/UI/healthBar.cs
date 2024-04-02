@@ -10,6 +10,14 @@ public class healthBar : MonoBehaviour
     public GameObject bar;
     public TextMeshProUGUI num;
 
+    public GameObject display;
+    public Sprite healthy;
+    public Color healthyColor;
+    public Sprite damaged;
+    public Color damagedColor;
+    public Sprite critical;
+    public Color criticalColor;
+
     void Start()
     {
         
@@ -18,7 +26,30 @@ public class healthBar : MonoBehaviour
     void Update()
     {
         int newInt = (int)playerData.currHealth;
+        
         num.text = newInt.ToString();
-        bar.GetComponent<Image>().fillAmount = playerData.currHealth/playerData.maxHealth;
+        float scaledHealth = playerData.currHealth / playerData.maxHealth;
+        if (scaledHealth >= 0.60)
+        {
+            display.GetComponent<Image>().sprite = healthy;
+            colorChange(healthyColor);
+        }
+        else if (scaledHealth >= 0.25)
+        {
+            display.GetComponent<Image>().sprite = damaged;
+            colorChange(damagedColor);
+        }
+        else
+        {
+            display.GetComponent<Image>().sprite = critical;
+            colorChange(criticalColor);
+        }
+        bar.GetComponent<Image>().fillAmount = scaledHealth;
+    }
+
+    void colorChange(Color change)
+    {
+        Color newColor = new Color(change.r, change.g, change.b);
+        bar.GetComponent<Image>().color = newColor;
     }
 }
