@@ -95,7 +95,7 @@ public class playerData : MonoBehaviour
     {
         if (currGun)
         {
-            print("Destroyed"); 
+            //print("Destroyed"); 
             Destroy(currGun.gameObject);
         }
         GameObject addedWeapon = GameObject.Instantiate(newWeapon, gunRoot.transform, worldPositionStays: false);

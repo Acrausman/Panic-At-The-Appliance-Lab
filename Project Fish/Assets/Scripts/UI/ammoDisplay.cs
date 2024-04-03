@@ -6,16 +6,21 @@ using UnityEngine.UI;
 
 public class ammoDisplay : MonoBehaviour
 {
-    TextMeshProUGUI text;
+    public TextMeshProUGUI currText;
+    public TextMeshProUGUI maxText;
     public TextMeshProUGUI storageText;
     public playerData player;
+    public Sprite waterSprite;
     public Color waterColor;
+    public Sprite sparkSprite;
     public Color sparkColor;
+    public Sprite discoSprite;
     public Color discoColor;
+    Image image;
 
     void Start()
     {
-        text = gameObject.GetComponent<TextMeshProUGUI>();
+        image = gameObject.GetComponent<Image>();
     }
 
     void Update()
@@ -25,28 +30,32 @@ public class ammoDisplay : MonoBehaviour
             switch (player.currGun.ammoType)
             {
                 case Gun.AmmoType.light:
-                    storageText.text = player.sparkAmmoReserve.ToString();
-                    storageText.color = new Color(sparkColor.r, sparkColor.g, sparkColor.b);
-                    text.color = new Color(waterColor.r, waterColor.g, waterColor.b);
+                    //storageText.text = player.sparkAmmoReserve.ToString();
+                    //storageText.color = new Color(sparkColor.r, sparkColor.g, sparkColor.b);
+                    image.sprite = waterSprite;
+                    //text.color = new Color(waterColor.r, waterColor.g, waterColor.b);
                     break;
 
                 case Gun.AmmoType.medium:
-                    storageText.text = player.waterAmmoReserve.ToString();
-                    storageText.color = new Color(waterColor.r, waterColor.g, waterColor.b);
-                    text.color = new Color(sparkColor.r, sparkColor.g, sparkColor.b);
+                    //storageText.text = player.waterAmmoReserve.ToString();
+                    //storageText.color = new Color(waterColor.r, waterColor.g, waterColor.b);
+                    image.sprite = sparkSprite;
+                    //text.color = new Color(sparkColor.r, sparkColor.g, sparkColor.b);
                     break;
 
                 case Gun.AmmoType.heavy:
-                    text.color = new Color(discoColor.r, discoColor.g, discoColor.b);
+                    image.sprite = discoSprite;
+                    //text.color = new Color(discoColor.r, discoColor.g, discoColor.b);
                     break;
 
                 default:
-                    storageText.text = player.sparkAmmoReserve.ToString();
-                    storageText.color = new Color(sparkColor.r, sparkColor.g, sparkColor.b);
-                    text.color = new Color(waterColor.r, waterColor.g, waterColor.b);
+                    //storageText.text = player.sparkAmmoReserve.ToString();
+                    //storageText.color = new Color(sparkColor.r, sparkColor.g, sparkColor.b);
+                    //text.color = new Color(waterColor.r, waterColor.g, waterColor.b);
                     break;
             }
-            text.text = (player.currAmmo.ToString() + " / " + player.maxAmmo.ToString());
+            currText.text = (player.currAmmo.ToString());
+            maxText.text = (player.maxAmmo.ToString());
         }
         
     }
