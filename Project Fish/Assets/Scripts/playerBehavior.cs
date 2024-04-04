@@ -10,6 +10,7 @@ public class playerBehavior : MonoBehaviour
     [SerializeField] Transform camPos;
 
     //Script References
+    public pauseMenu menu;
     playerData data;
 
     //Input Variables
@@ -74,7 +75,7 @@ public class playerBehavior : MonoBehaviour
             }
         }
         if (Input.GetButton("Reload")) data.reload();
-        if (Input.GetButton("Fire1")) fireGun();
+        if (Input.GetButton("Fire1") && !menu.pauseUI.activeInHierarchy) fireGun();
         if (Input.GetButton("Melee")) meleeAttack();
         
 
