@@ -34,9 +34,13 @@ public class enemyBehaviorWalk : MonoBehaviour
     {
         if (Vector3.Distance(this.transform.position, target.transform.position) < detectionDistance)
         {
+            if (idle)
+            {
+                int x = Random.Range(0, aggroLines.Count - 1);
+                audioSource.PlayOneShot(aggroLines[x]);
+            }
             idle = false;
-            int x = Random.Range(0, aggroLines.Count - 1);
-            audioSource.PlayOneShot(aggroLines[x]);
+
         }
         if(!idle && Vector3.Distance(this.transform.position, target.transform.position) > attackRange )
         {
