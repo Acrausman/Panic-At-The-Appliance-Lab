@@ -10,6 +10,14 @@ public class pauseMenu : MonoBehaviour
 {
     public static bool isPaused = false;
 
+    public Slider uiScaleSlider;
+    public RectTransform[] elementsToScale;
+    [SerializeField]Vector3[] baseScaleValues;
+    //public RectTransform ammo;
+    Vector3 baseAmmoScale;
+    //public RectTransform crosshair;
+    Vector3 baseCrosshairScale;
+    public TextMeshProUGUI uiScaleText;
     public CinemachineVirtualCamera vCam;
 
     public Slider volumeSlider;
@@ -27,9 +35,17 @@ public class pauseMenu : MonoBehaviour
 
     public string mainMenuString = "MainMenu";
 
-    void Start()
+    void Awake()
     {
-        
+        //baseScaleValues = new Vector3[elementsToScale.Length];
+        for(int i = 0; i < elementsToScale.Length; i++)
+        {
+            Vector3 scaleToAdd = new Vector3(elementsToScale[i].localScale.x, elementsToScale[i].localScale.y, elementsToScale[i].localScale.z);
+            print(scaleToAdd);
+            baseScaleValues[i] = new Vector3(scaleToAdd.x,scaleToAdd.y,scaleToAdd.z);
+        }
+        ChangeUIScale();
+
     }
 
     // Update is called once per frame
@@ -106,6 +122,18 @@ public class pauseMenu : MonoBehaviour
     public void ExitProgram()
     {
         Application.Quit();
+    }
+
+    public void ChangeUIScale()
+    {
+        float sliderValue = uiScaleSlider.value + 0.5f;
+        for(int i = 0; i < elementsToScale.Length; i++)
+        {
+            Vector3 newScaleValue = baseScaleValues[i] * (sliderValue * 1.5f);
+            elementsToScale[i].localScale = newScaleValue;
+        }
+        uiScaleText.text = "UI Scale: " + sliderValue.ToString("F1")+ "x";
+        
     }
 
     public void ChangeFOV()
