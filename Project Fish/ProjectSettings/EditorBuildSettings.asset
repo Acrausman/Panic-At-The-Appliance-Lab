@@ -44,4 +44,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VictoryScene.unity
     guid: a9a269a1fab93fc4a9a95ed3c3ca0f7c
+  - enabled: 1
+    path: Assets/Scenes/Level2/Level 2.unity
+    guid: 82d70f0819c1b40409923476169cb9b2
+  - enabled: 1
+    path: Assets/Scenes/Level2/Arena1OverAndUnder.unity
+    guid: dfef43b280c3057468341a9a11b908ae
+  - enabled: 1
+    path: Assets/Scenes/Level2/Arena2Pits.unity
+    guid: 06dcb66635ba7854fb87c04391d7a728
+  - enabled: 1
+    path: Assets/Scenes/Level2/BETAComplete.unity
+    guid: 1fc3eab3d04cb4e408701e528567203c
+  - enabled: 1
+    path: Assets/Scenes/Level2/Part1MeetPrinter.unity
+    guid: 2f64c6caaf3eb674ca97f5157bf6ee2f
+  - enabled: 1
+    path: Assets/Scenes/Level2/Part2MazeA.unity
+    guid: a65d4c70103215e46ae023bd2e0c2424
+  - enabled: 1
+    path: Assets/Scenes/IntroCutscene.unity
+    guid: ca740c1dd85c9604e8f7d887567366f1
   m_configObjects: {}
