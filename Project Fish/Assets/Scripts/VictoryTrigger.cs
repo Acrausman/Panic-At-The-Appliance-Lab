@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class VictoryTrigger : MonoBehaviour
 {
+    public string nextScene;
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("VictoryScene");
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
+        SceneManager.LoadScene(nextScene);
     }
 }
