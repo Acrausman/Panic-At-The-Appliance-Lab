@@ -5,6 +5,7 @@ using UnityEngine.Animations;
 
 public class Gun : MonoBehaviour
 {
+    public ParticleSystem muzzle;
     public GameObject gunBarrel;
     public string Name = "Gun";
     public enum Type
@@ -57,6 +58,7 @@ public class Gun : MonoBehaviour
 
     public void fire()
     {
+        muzzle.Play();
         animator.SetTrigger("shoot");
         audioSource.PlayOneShot(sound);
         lineRenderer.enabled = false;
