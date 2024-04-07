@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class levelManager1 : MonoBehaviour
 {
+    public bool isFirstLevel = false;
+
     public GameObject player;
     public GameObject playerObj;
 
@@ -26,6 +28,7 @@ public class levelManager1 : MonoBehaviour
     void Start()
     {
         SceneManager.LoadSceneAsync(firstScene,LoadSceneMode.Additive);
+        if(!isFirstLevel)playerObj.GetComponent<playerData>().restoreInventory();
     }
 
     void Update()

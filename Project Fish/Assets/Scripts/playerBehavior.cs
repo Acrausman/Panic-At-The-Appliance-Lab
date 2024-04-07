@@ -58,19 +58,19 @@ public class playerBehavior : MonoBehaviour
             switch(weapInput)
             {
                 case "1":
-                    if(data.weaponList.Count >= 1)data.switchWeapon(0);
+                    if(data.isWeaponListIndexValid(0))data.switchWeapon(0);
                     break;
                 
                 case "2":
-                    if (data.weaponList.Count >= 2)data.switchWeapon(1);
+                    if (data.isWeaponListIndexValid(1)) data.switchWeapon(1);
                     break;
 
                 case "3":
-                    if(data.weaponList.Count >= 3)data.switchWeapon(2);
+                    if(data.isWeaponListIndexValid(2)) data.switchWeapon(2);
                     break;
 
                 default:
-                    if(data.weaponList.Count >= 1) data.switchWeapon(0);
+                    if(data.isWeaponListIndexValid(0)) data.switchWeapon(0);
                     break;
             }
         }

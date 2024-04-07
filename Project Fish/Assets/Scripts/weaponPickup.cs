@@ -29,8 +29,8 @@ public class weaponPickup : MonoBehaviour
             {
                 used = true;
                 playerData data = other.GetComponentInParent<playerData>();
-                data.weaponList.Add(weapon);
-                data.setCurrGun(data.weaponList[gun.index]);
+                data.addWeapon(weapon);
+                data.setCurrGun(data.getWeaponList()[gun.index]);
                 Destroy(gameObject);
             }
         }

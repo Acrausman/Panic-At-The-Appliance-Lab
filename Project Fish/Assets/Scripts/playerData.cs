@@ -10,12 +10,16 @@ public class playerData : MonoBehaviour
     public AudioClip damage;
     public float maxHealth;
     public float currHealth;
+    public static float storedHealth;
     public float invTime = 1;
     public float currInv = 0;
 
     public float waterAmmoReserve;
+    public static float storedWater;
     public float sparkAmmoReserve;
+    public static float storedSpark;
     public float discoAmmoReserve;
+    public static float storedDisco;
     public float maxAmmo;
     public float currAmmo;
     public Vector3 gunOffset;
@@ -26,7 +30,7 @@ public class playerData : MonoBehaviour
     public float meleeDamage = 10;
     public float meleeRange = 10;
 
-    public List<GameObject> weaponList;
+    public static List<GameObject> weaponList = new List<GameObject>();
 
 
     public GameObject gunRoot;
@@ -35,14 +39,14 @@ public class playerData : MonoBehaviour
 
     AudioSource audioSource;
 
-    void Start()
+    void Awake()
     {
         currInv = 0;
         audioSource = GetComponent<AudioSource>();
         currHealth = maxHealth;
         //if(weaponList[0] != null) setCurrGun(weaponList[0]);
-        
-        
+
+        //DontDestroyOnLoad(gameObject);
     }
 
 
@@ -246,10 +250,46 @@ public class playerData : MonoBehaviour
         currInv = 0;
     }*/
 
+    public void addWeapon(GameObject newWeapon)
+    {
+        print(newWeapon.name);
+        weaponList.Add(newWeapon);
+        print(weaponList.ToString());
+    }
+
+    public void storeForNextLevel()
+    {
+        storeAmmo();
+        storedHealth = currHealth;
+        storedWater = waterAmmoReserve;
+        storedSpark = sparkAmmoReserve;
+        storedDisco = discoAmmoReserve;
+
+    }
+
+    public void restoreInventory()
+    {
+        currHealth = storedHealth;
+        waterAmmoReserve = storedWater;
+        sparkAmmoReserve = storedSpark;
+        discoAmmoReserve = storedDisco;
+
+    }
+
     IEnumerator reloadDelay()
     {
         yield return new WaitForSeconds(currGun.reloadTime);
         this.gameObject.GetComponent<playerBehavior>().readyToFire = true;
         canReload = true;
+    }
+
+    public List<GameObject> getWeaponList()
+    {
+        return weaponList;
+    }
+
+    public bool isWeaponListIndexValid(int x)
+    {
+        return weaponList[x];
     }
 }

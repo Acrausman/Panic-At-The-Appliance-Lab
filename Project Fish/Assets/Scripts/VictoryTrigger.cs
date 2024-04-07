@@ -8,6 +8,11 @@ public class VictoryTrigger : MonoBehaviour
     public string nextScene;
     void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(nextScene);
+        if(other.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<playerData>().storeForNextLevel();
+            SceneManager.LoadScene(nextScene);
+        }
+        
     }
 }
