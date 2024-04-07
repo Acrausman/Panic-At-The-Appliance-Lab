@@ -37,6 +37,7 @@ public class pauseMenu : MonoBehaviour
 
     void Awake()
     {
+        isPaused = false;
         //baseScaleValues = new Vector3[elementsToScale.Length];
         for(int i = 0; i < elementsToScale.Length; i++)
         {
@@ -116,6 +117,7 @@ public class pauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(mainMenuString);
     }
 

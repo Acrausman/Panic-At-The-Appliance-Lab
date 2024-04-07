@@ -58,19 +58,19 @@ public class playerBehavior : MonoBehaviour
             switch(weapInput)
             {
                 case "1":
-                    if(data.weaponList[0] != null)data.switchWeapon(0);
+                    if(data.weaponList.Count >= 1)data.switchWeapon(0);
                     break;
                 
                 case "2":
-                    if (data.weaponList[1] != null)data.switchWeapon(1);
+                    if (data.weaponList.Count >= 2)data.switchWeapon(1);
                     break;
 
                 case "3":
-                    if(data.weaponList[0] != null)data.switchWeapon(2);
+                    if(data.weaponList.Count >= 3)data.switchWeapon(2);
                     break;
 
                 default:
-                    if(data.weaponList[0] != null)data.switchWeapon(0);
+                    if(data.weaponList.Count >= 1) data.switchWeapon(0);
                     break;
             }
         }
@@ -162,17 +162,21 @@ public class playerBehavior : MonoBehaviour
 
     private void fireGun()
     {
-        if (readyToFire)
+        if(data.currGun != null)
         {
-            if (!(data.currAmmo <= 0))
+            if (readyToFire)
             {
-                data.spendAmmo();
-                readyToFire = false;
-                data.currGun.fire();
-                rb.AddForce((cam.forward * -1) * data.currGun.kickback);
-                StartCoroutine(gunRecharge());
+                if (!(data.currAmmo <= 0))
+                {
+                    data.spendAmmo();
+                    readyToFire = false;
+                    data.currGun.fire();
+                    rb.AddForce((cam.forward * -1) * data.currGun.kickback);
+                    StartCoroutine(gunRecharge());
+                }
             }
         }
+        
     }
 
     private void meleeAttack()
