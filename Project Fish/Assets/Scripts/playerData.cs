@@ -8,40 +8,48 @@ public class playerData : MonoBehaviour
     public suitVoice voice;
 
     public AudioClip damage;
-    public float maxHealth;
-    public float currHealth;
+    public static float maxHealth;
+    public static float currHealth;
     public float invTime = 1;
-    public float currInv = 0;
+    public static float currInv = 0;
 
-    public float waterAmmoReserve;
-    public float sparkAmmoReserve;
-    public float discoAmmoReserve;
-    public float maxAmmo;
-    public float currAmmo;
+    public static float waterAmmoReserve;
+    public static float sparkAmmoReserve;
+    public static float discoAmmoReserve;
+    public static float maxAmmo;
+    public static float currAmmo;
     public Vector3 gunOffset;
+    public static int currGunIndex = 0;
     float reloadTime;
-    public bool canReload = true;
-    public bool canFire = true;
+    public static bool canReload = true;
+    public static bool canFire = true;
 
     public float meleeDamage = 10;
     public float meleeRange = 10;
 
-    public List<GameObject> weaponList;
+    public static List<GameObject> weaponList;
 
 
     public GameObject gunRoot;
-    public Gun currGun;
+    public static Gun currGun;
     Gun.AmmoType currGunAmmoType;
 
     AudioSource audioSource;
 
-    void Start()
+    
+
+    void Awake()
     {
         currInv = 0;
         audioSource = GetComponent<AudioSource>();
         currHealth = maxHealth;
         //if(weaponList[0] != null) setCurrGun(weaponList[0]);
-        
+        if(weaponList.Count >= 1)
+        {
+            switchWeapon(currGunIndex);
+        }
+
+        DontDestroyOnLoad(gameObject);
         
     }
 
@@ -86,6 +94,7 @@ public class playerData : MonoBehaviour
     {
         if(weaponList[index] != null)
         {
+            currGunIndex = index;
             //print("Switching weapon to " + index.ToString());
             storeAmmo();
             setCurrGun(weaponList[index]);
