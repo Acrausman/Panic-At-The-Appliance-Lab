@@ -23,7 +23,7 @@ public class enemySpawner : MonoBehaviour
 
     void Update()
     {
-        if(count > enemyRoster.Count)
+        if(count >= enemyRoster.Count && door != null)
         {
             door.canOpen = true;
         }
