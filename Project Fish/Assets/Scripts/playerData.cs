@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class playerData : MonoBehaviour
 {
+    public static playerData instance;
     public suitVoice voice;
 
     public AudioClip damage;
@@ -20,6 +21,7 @@ public class playerData : MonoBehaviour
     public static float storedSpark;
     public float discoAmmoReserve;
     public static float storedDisco;
+    public static int currWeaponIndex;
     public float maxAmmo;
     public float currAmmo;
     public Vector3 gunOffset;
@@ -39,14 +41,18 @@ public class playerData : MonoBehaviour
 
     AudioSource audioSource;
 
-    void Awake()
+    void Start()
     {
+        instance = this;
         currInv = 0;
         audioSource = GetComponent<AudioSource>();
         currHealth = maxHealth;
-        //if(weaponList[0] != null) setCurrGun(weaponList[0]);
+        //print(waterAmmoReserve);
+        //print(sparkAmmoReserve);
+        //print(discoAmmoReserve);
+        if (weaponList[0].GetComponent<Gun>()) setCurrGun(weaponList[currWeaponIndex]);
 
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 
 
@@ -252,23 +258,28 @@ public class playerData : MonoBehaviour
 
     public void addWeapon(GameObject newWeapon)
     {
-        print(newWeapon.name);
+        //print(newWeapon.name);
         weaponList.Add(newWeapon);
-        print(weaponList.ToString());
+        //print(weaponList.ToString());
     }
 
     public void storeForNextLevel()
     {
         storeAmmo();
         storedHealth = currHealth;
+        currWeaponIndex = currGun.index;
         storedWater = waterAmmoReserve;
+        //print(storedWater);
         storedSpark = sparkAmmoReserve;
+        //print(storedSpark);
         storedDisco = discoAmmoReserve;
+        //print(storedDisco);
 
     }
 
     public void restoreInventory()
     {
+        print("Restored Inventory");
         currHealth = storedHealth;
         waterAmmoReserve = storedWater;
         sparkAmmoReserve = storedSpark;

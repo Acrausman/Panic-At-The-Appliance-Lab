@@ -42,7 +42,7 @@ public class pauseMenu : MonoBehaviour
         for(int i = 0; i < elementsToScale.Length; i++)
         {
             Vector3 scaleToAdd = new Vector3(elementsToScale[i].localScale.x, elementsToScale[i].localScale.y, elementsToScale[i].localScale.z);
-            print(scaleToAdd);
+            //print(scaleToAdd);
             baseScaleValues[i] = new Vector3(scaleToAdd.x,scaleToAdd.y,scaleToAdd.z);
         }
         ChangeUIScale();

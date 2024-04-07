@@ -25,7 +25,7 @@ public class levelManager1 : MonoBehaviour
     public Vector3 pointToMove;
     public string sceneToLoad;
 
-    void Start()
+    void Awake()
     {
         SceneManager.LoadSceneAsync(firstScene,LoadSceneMode.Additive);
         if(!isFirstLevel)playerObj.GetComponent<playerData>().restoreInventory();
