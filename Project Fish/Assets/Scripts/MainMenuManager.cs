@@ -11,7 +11,7 @@ public class MainMenuManager : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Confined;
     }
     //start game
-    public void StartGame() => SceneManager.LoadScene("Level 1");
+    public void StartGame() => SceneManager.LoadScene("IntroCutscene");
 
     public void QuitGame()
     {
