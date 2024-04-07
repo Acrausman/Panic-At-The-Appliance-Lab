@@ -11,7 +11,7 @@ public class playerData : MonoBehaviour
     public float maxHealth;
     public float currHealth;
     public float invTime = 1;
-    float currInv = 0;
+    public float currInv = 0;
 
     public float waterAmmoReserve;
     public float sparkAmmoReserve;
@@ -45,16 +45,17 @@ public class playerData : MonoBehaviour
         
     }
 
-    /*
+
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.G))
+        if(currInv > 0)
         {
-            takeDamage(maxHealth);
+            currInv -= 1 * Time.deltaTime;
         }
     }
-    */
+ 
     
+
 
     public void takeDamage(float amount)
     {
@@ -74,9 +75,10 @@ public class playerData : MonoBehaviour
                 //print("play");
                 voice.playLowHealth();
             }
-            currInv = 1;
-            StartCoroutine(invincibilityPeriod());
+            currInv = invTime;
+            //StartCoroutine(invincibilityPeriod());
         }
+
         
     }
 
@@ -236,13 +238,13 @@ public class playerData : MonoBehaviour
         }
     }
 
-    IEnumerator invincibilityPeriod()
+    /*IEnumerator invincibilityPeriod()
     {
         Animator anim = currGun.GetComponent<Animator>();
         //anim.runtimeAnimatorController.
         yield return new WaitForSeconds(invTime);
         currInv = 0;
-    }
+    }*/
 
     IEnumerator reloadDelay()
     {

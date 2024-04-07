@@ -20,6 +20,7 @@ public class enemyBehaviorWalk : MonoBehaviour
     public List<AudioClip> aggroLines;
 
     bool readyToAttack;
+    float baseY;
 
     public bool idle = true;
     void Awake()
@@ -28,6 +29,7 @@ public class enemyBehaviorWalk : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("PlayerDetection");
         animator = gameObject.GetComponent<Animator>();
         readyToAttack = true;
+        baseY = transform.position.y;
     }
 
     void Update()
@@ -42,6 +44,9 @@ public class enemyBehaviorWalk : MonoBehaviour
             idle = false;
 
         }
+
+       
+
         if(!idle && Vector3.Distance(this.transform.position, target.transform.position) > attackRange )
         {
             updateMovement();
@@ -58,7 +63,8 @@ public class enemyBehaviorWalk : MonoBehaviour
         animator.SetBool("Attacking", false);
         animator.SetBool("Running", true);
         audioSource.clip = (walkSound);
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+        Vector3 desiredPos = new Vector3(target.transform.position.x, baseY, target.transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, desiredPos, moveSpeed * Time.deltaTime);
         transform.LookAt(target.transform);
     }
 
