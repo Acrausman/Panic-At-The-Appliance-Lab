@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class enemySpawner : MonoBehaviour
 {
+    public AudioClip[] clearSound;
+
     public GameObject coffeMaker;
     public GameObject airFryer;
     public GameObject iron;
@@ -14,9 +16,13 @@ public class enemySpawner : MonoBehaviour
     public List<GameObject> enemyRoster;
     public int count;
     public slidingDoor door;
+    public bool arena = true;
+
+    AudioSource audioSource;
 
     void Start()
     {
+        audioSource = gameObject.GetComponent<AudioSource>();
         hasSpawned = false;
         count = 0;
     }
@@ -25,7 +31,9 @@ public class enemySpawner : MonoBehaviour
     {
         if(count >= enemyRoster.Count && door != null)
         {
-            door.canOpen = true;
+            int clip = Random.Range(0,clearSound.Length);
+            if(arena)audioSource.PlayOneShot(clearSound[clip]); door.canOpen = true;
+            Destroy(gameObject);
         }
     }
 

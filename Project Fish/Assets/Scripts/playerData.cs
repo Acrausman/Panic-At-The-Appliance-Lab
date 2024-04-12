@@ -246,6 +246,10 @@ public class playerData : MonoBehaviour
         {
             currHealth += amount;
         }
+        else
+        {
+            currHealth = maxHealth;
+        }
     }
 
     /*IEnumerator invincibilityPeriod()
