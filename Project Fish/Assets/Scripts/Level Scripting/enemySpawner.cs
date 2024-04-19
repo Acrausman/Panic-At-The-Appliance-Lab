@@ -5,6 +5,7 @@ using UnityEngine;
 public class enemySpawner : MonoBehaviour
 {
     public AudioClip[] clearSound;
+    public audioSystem system;
 
     public GameObject coffeMaker;
     public GameObject airFryer;
@@ -13,7 +14,7 @@ public class enemySpawner : MonoBehaviour
     public GameObject printer;
     public enemySpawnPoint[] spawnPoints;
     bool hasSpawned;
-    public List<GameObject> enemyRoster;
+    public int enemyRoster;
     public int count;
     public slidingDoor door;
     public bool arena = true;
@@ -22,15 +23,21 @@ public class enemySpawner : MonoBehaviour
 
     void Start()
     {
+        system = GameObject.FindGameObjectWithTag("AudioSystem").GetComponent<audioSystem>(); 
         audioSource = gameObject.GetComponent<AudioSource>();
         hasSpawned = false;
-        count = 0;
+        for(int i = 0; i < spawnPoints.Length; i++ )
+        {
+            enemyRoster++;
+        }
     }
 
     void Update()
     {
-        if(count >= enemyRoster.Count && door != null)
+        if(count >= enemyRoster && door != null)
         {
+            system.returnToDefault();
+            print("Destroyed");
             int clip = Random.Range(0,clearSound.Length);
             if(arena)audioSource.PlayOneShot(clearSound[clip]); door.canOpen = true;
             Destroy(gameObject);
@@ -81,7 +88,7 @@ public class enemySpawner : MonoBehaviour
         Vector3 desiredPos = new Vector3(point.position.x, point.position.y, point.position.z);
         GameObject enemyToInst = Instantiate(type, desiredPos, Quaternion.identity);
         enemyToInst.GetComponent<enemyData>().spawner = gameObject.GetComponent<enemySpawner>();
-        enemyRoster.Add(enemyToInst);
+        //enemyRoster++;
         
 
     }

@@ -8,6 +8,7 @@ public class playerBehavior : MonoBehaviour
     Rigidbody rb;
     [SerializeField] Transform cam;
     [SerializeField] Transform camPos;
+    public suitVoice voice;
 
     //Script References
     public pauseMenu menu;
@@ -168,12 +169,14 @@ public class playerBehavior : MonoBehaviour
             {
                 if (!(data.currAmmo <= 0))
                 {
+                    print("Fired");
                     data.spendAmmo();
                     readyToFire = false;
                     data.currGun.fire();
                     rb.AddForce((cam.forward * -1) * data.currGun.kickback);
                     StartCoroutine(gunRecharge());
                 }
+                else data.currGun.noAmmo(); readyToFire = false; StartCoroutine(gunRecharge());
             }
         }
         
@@ -183,6 +186,7 @@ public class playerBehavior : MonoBehaviour
     {
         if (readyToFire)
         {
+            voice.playMelee();
             readyToFire = false;
             data.currGun.melee(data.meleeDamage, data.meleeRange);
             StartCoroutine((gunRecharge()));

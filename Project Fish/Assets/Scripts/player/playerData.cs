@@ -218,12 +218,14 @@ public class playerData : MonoBehaviour
                 print("Activated");
                 if(currGunAmmoType == Gun.AmmoType.light) maxAmmo += amount;
                 else waterAmmoReserve += amount;
+                voice.playWaterRestored();
                 break;
 
             case boxAmmo.AmmoType.spark:
                 print("Activated");
                 if (currGunAmmoType == Gun.AmmoType.medium) maxAmmo += amount;
                 else sparkAmmoReserve += amount;
+                voice.playSparkRestored();
                 break;
 
             case boxAmmo.AmmoType.disco:

@@ -41,6 +41,8 @@ public class Gun : MonoBehaviour
     public float kickback = 10;
 
     public AudioClip sound;
+    public AudioClip reloadSound;
+    public AudioClip emptySound;
 
     Animator animator;
     private Camera cam;
@@ -54,6 +56,11 @@ public class Gun : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         cam = GetComponentInParent<Camera>();
         animator = GetComponentInChildren<Animator>();
+    }
+
+    public void noAmmo()
+    {
+        audioSource.PlayOneShot(emptySound);
     }
 
     public void fire()
@@ -104,6 +111,7 @@ public class Gun : MonoBehaviour
 
     public void reload()
     {
+        audioSource.PlayOneShot(reloadSound);
         animator.SetTrigger("reload");
     }
 

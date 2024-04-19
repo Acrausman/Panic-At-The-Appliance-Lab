@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class enemyData : MonoBehaviour
 {
+    AudioSource audioSource;
+    public AudioClip hitSound;
     public float maxHealth = 40;
     public float currHealth;
     public enemySpawner spawner;
@@ -13,6 +15,7 @@ public class enemyData : MonoBehaviour
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         currHealth = maxHealth;
         //audioSource = gameObject.GetComponent<AudioSource>();
         
@@ -20,6 +23,7 @@ public class enemyData : MonoBehaviour
 
     public void takeDamage(float amount)
     {
+        audioSource.PlayOneShot(hitSound);
         currHealth -= amount;
         if (currHealth <= 0)
         {

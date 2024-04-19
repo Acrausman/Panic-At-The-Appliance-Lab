@@ -6,6 +6,7 @@ public class suitVoice : MonoBehaviour
 {
     AudioSource audioSource;
 
+    public AudioClip[] melee;
     public AudioClip [] heal;
     public AudioClip[] lowHealth;
     public AudioClip[] noSpark;
@@ -24,6 +25,13 @@ public class suitVoice : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void playMelee()
+    {
+        audioSource.Stop();
+        int i = Random.Range(0, melee.Length);
+        audioSource.PlayOneShot(melee[i]);
     }
 
     public void playHeal()
