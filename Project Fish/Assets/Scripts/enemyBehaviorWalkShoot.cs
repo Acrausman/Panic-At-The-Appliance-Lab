@@ -20,6 +20,7 @@ public class enemyBehaviorWalkShoot : MonoBehaviour
 
     Animator animator;
     AudioSource audioSource;
+    public List<AudioClip> aggroLines;
 
     public enum enemyState
     {
@@ -33,6 +34,7 @@ public class enemyBehaviorWalkShoot : MonoBehaviour
 
     void Awake()
     {
+        audioSource = gameObject.GetComponent<AudioSource>();
         readyToAttack = true;
         player = GameObject.FindGameObjectWithTag("Player");
         animator = gameObject.GetComponent<Animator>();
