@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class deathVoiceline : MonoBehaviour
 {
-    AudioSource audioSource;
+    public AudioSource audioSource;
     public List<AudioClip> voiceLines;
 
     // Start is called before the first frame update
@@ -18,6 +18,6 @@ public class deathVoiceline : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
