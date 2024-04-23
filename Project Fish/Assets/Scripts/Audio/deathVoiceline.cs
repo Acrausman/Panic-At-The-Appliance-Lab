@@ -6,6 +6,7 @@ public class deathVoiceline : MonoBehaviour
 {
     public AudioSource audioSource;
     public List<AudioClip> voiceLines;
+    public float timeToDestroy = 5;
 
     // Start is called before the first frame update
     void Awake()
@@ -24,7 +25,7 @@ public class deathVoiceline : MonoBehaviour
 
     IEnumerator destroySelf()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(timeToDestroy);
         Destroy(gameObject);
     }
 

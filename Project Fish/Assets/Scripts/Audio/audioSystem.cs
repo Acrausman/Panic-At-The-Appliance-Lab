@@ -62,12 +62,12 @@ public class audioSystem : MonoBehaviour
 
             while(time <= fadeTime)
             {
-                float one = Mathf.Lerp(0, 1, time / fadeTime);
-                float two = Mathf.Lerp(1, 0, time / fadeTime);
-                float cOne = Mathf.Clamp(one,0,maxVolume);
-                float cTwo = Mathf.Clamp(two, 0, maxVolume);
-                track1.volume = cOne;
-                track2.volume = cTwo;
+                float t2Volume = Mathf.Lerp(0, 1, time / fadeTime);
+                float t1Volume = Mathf.Lerp(1, 0, time / fadeTime);
+                float cl2 = Mathf.Clamp(t2Volume,0,maxVolume);
+                float cl1 = Mathf.Clamp(t1Volume, 0, maxVolume);
+                track2.volume = cl2;
+                track1.volume = cl1;             
                 time += 1* Time.deltaTime;
                 yield return null;  
             }
@@ -80,12 +80,12 @@ public class audioSystem : MonoBehaviour
             track1.Play();
             while (time < fadeTime)
             {
-                float one = Mathf.Lerp(0, 1, time / fadeTime);
-                float two = Mathf.Lerp(1, 0, time / fadeTime);
-                float cOne = Mathf.Clamp(one, 0, maxVolume);
-                float cTwo = Mathf.Clamp(two, 0, maxVolume);
-                track1.volume = cOne;
-                track2.volume = cTwo;
+                float t1Volume = Mathf.Lerp(0, 1, time / fadeTime);
+                float t2Volume = Mathf.Lerp(1, 0, time / fadeTime);
+                float cl1 = Mathf.Clamp(t2Volume, 0, maxVolume);
+                float cl2 = Mathf.Clamp(t1Volume, 0, maxVolume);
+                track1.volume = cl1;
+                track2.volume = cl2;
                 time += 1 * Time.deltaTime;
             }
 
