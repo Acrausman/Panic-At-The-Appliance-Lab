@@ -68,4 +68,37 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IntroCutscene.unity
     guid: ca740c1dd85c9604e8f7d887567366f1
+  - enabled: 1
+    path: Assets/Scenes/Level2/Part3DiscoA.unity
+    guid: 9ac6a4f0cd78c9448b3c205eb03586ae
+  - enabled: 1
+    path: Assets/Scenes/Level2/Part3DiscoB.unity
+    guid: f6852f8899f359d40897754059b227c8
+  - enabled: 1
+    path: Assets/Scenes/Level2/Arena3ThePit.unity
+    guid: 1e29944be42114040876139f96338e6d
+  - enabled: 1
+    path: Assets/Scenes/Level2/Part4Amongus.unity
+    guid: 7d3845e3cabbb7e409b675ccdab18925
+  - enabled: 1
+    path: Assets/Scenes/Level2/Arena4.unity
+    guid: 438620150f1566549bb2e1ed695a6e2a
+  - enabled: 1
+    path: Assets/Scenes/Level2/Part5Pinball.unity
+    guid: 3fd96b52dbe16d2458f0a6c8e2da1a7e
+  - enabled: 1
+    path: Assets/Scenes/Level2/Arena5Cone.unity
+    guid: 415a5c5c49adeda42b834748b44ad62e
+  - enabled: 1
+    path: Assets/Scenes/Level2/Level2Complete.unity
+    guid: 0dc2d296f5c8a194eb3f3165481fe885
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: b80dac09399f627448253c908f41a08f
+  - enabled: 1
+    path: Assets/Scenes/GoingToBoss.unity
+    guid: 51a026e3d570ec64882efe645fe9e7a0
+  - enabled: 1
+    path: Assets/Scenes/GoingToLevel2.unity
+    guid: 28f4e90366bc9b344bbc6a9194bae610
   m_configObjects: {}
