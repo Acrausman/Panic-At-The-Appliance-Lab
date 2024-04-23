@@ -5,6 +5,8 @@ using UnityEngine.Animations;
 
 public class Gun : MonoBehaviour
 {
+    public GameObject bulletModel;
+    public float bulletSpeed = 500;
     public ParticleSystem muzzle;
     public GameObject gunBarrel;
     public string Name = "Gun";
@@ -71,20 +73,32 @@ public class Gun : MonoBehaviour
         lineRenderer.enabled = false;
 
         Vector3 rayOrigin = cam.ViewportToWorldPoint(new Vector3(0.5f,0.5f,0));
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
 
+        Vector3 targetPoint;
         //lineRenderer.SetPosition(0, gunBarrel.transform.position);
 
         if(Physics.Raycast(rayOrigin, cam.transform.forward,out hit,range))
         {
+            targetPoint = hit.point;
             lineRenderer.SetPosition(1, hit.point);
             enemyData hitTarget = hit.transform.gameObject.GetComponent<enemyData>();
             if (hitTarget != null) hitTarget.takeDamage(damage);
         }
         else
         {
+            targetPoint = ray.GetPoint(range);
             lineRenderer.SetPosition(1, rayOrigin + (cam.transform.forward * range));
         }
+
+        Vector3 direction = targetPoint - gunBarrel.transform.position;
+
+        GameObject newBullet = Instantiate(bulletModel, gunBarrel.transform.position, Quaternion.identity);
+        newBullet.GetComponent<Bullet>().target = targetPoint;
+        newBullet.GetComponent<Bullet>().range = range;
+        newBullet.transform.forward = direction.normalized;
+        newBullet.GetComponent<Rigidbody>().AddForce(direction.normalized * bulletSpeed, ForceMode.Impulse);
     }
 
     public void melee(float mDamage, float mRange)

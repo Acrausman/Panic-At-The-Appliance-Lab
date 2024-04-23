@@ -16,6 +16,7 @@ public class enemyData : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
         currHealth = maxHealth;
         //audioSource = gameObject.GetComponent<AudioSource>();
         
@@ -27,7 +28,11 @@ public class enemyData : MonoBehaviour
         currHealth -= amount;
         if (currHealth <= 0)
         {
-            if(spawner != null)spawner.count++;
+            if(spawner != null)
+            {
+                print("Spawner Valid");
+                spawner.addCount();
+            }
             if (transform.parent != null) Destroy(transform.parent.gameObject);
             else
             {

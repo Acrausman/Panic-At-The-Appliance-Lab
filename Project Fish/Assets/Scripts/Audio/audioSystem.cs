@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class audioSystem : MonoBehaviour
 {
+    public float maxVolume = 0.5f;
+
     public AudioClip defaultClip;
 
     public float fadeTime;
@@ -21,12 +23,15 @@ public class audioSystem : MonoBehaviour
     private void Start()
     {
         track1 = gameObject.AddComponent<AudioSource>();
+        track1.volume = maxVolume;
         track1.loop = true;
         track2 = gameObject.AddComponent<AudioSource>();
+        track2.volume = maxVolume;
         track2.loop = true;
         isPlayingTrack1 = true;
 
-        switchTrack(defaultClip);
+        track1.clip = defaultClip;
+        track1.Play();
     }
 
 
@@ -47,7 +52,6 @@ public class audioSystem : MonoBehaviour
 
     private IEnumerator fadeTrack(AudioClip clipToPlay)
     {
-        print("Called");
         float time = 0;
         if (isPlayingTrack1)
         {
@@ -58,8 +62,12 @@ public class audioSystem : MonoBehaviour
 
             while(time <= fadeTime)
             {
-                track2.volume = Mathf.Lerp(0,1,time / fadeTime);
-                track1.volume = Mathf.Lerp(1,0, time / fadeTime);
+                float one = Mathf.Lerp(0, 1, time / fadeTime);
+                float two = Mathf.Lerp(1, 0, time / fadeTime);
+                float cOne = Mathf.Clamp(one,0,maxVolume);
+                float cTwo = Mathf.Clamp(two, 0, maxVolume);
+                track1.volume = cOne;
+                track2.volume = cTwo;
                 time += 1* Time.deltaTime;
                 yield return null;  
             }
@@ -72,8 +80,12 @@ public class audioSystem : MonoBehaviour
             track1.Play();
             while (time < fadeTime)
             {
-                track1.volume = Mathf.Lerp(0, 1, time / fadeTime);
-                track2.volume = Mathf.Lerp(1, 0, time / fadeTime);
+                float one = Mathf.Lerp(0, 1, time / fadeTime);
+                float two = Mathf.Lerp(1, 0, time / fadeTime);
+                float cOne = Mathf.Clamp(one, 0, maxVolume);
+                float cTwo = Mathf.Clamp(two, 0, maxVolume);
+                track1.volume = cOne;
+                track2.volume = cTwo;
                 time += 1 * Time.deltaTime;
             }
 

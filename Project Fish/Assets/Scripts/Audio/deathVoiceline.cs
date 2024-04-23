@@ -13,6 +13,7 @@ public class deathVoiceline : MonoBehaviour
         audioSource = gameObject.GetComponent<AudioSource>();
         int x = Random.Range(0, voiceLines.Count - 1);
         audioSource.PlayOneShot(voiceLines[x]);
+        StartCoroutine(destroySelf());
     }
 
     // Update is called once per frame
@@ -20,4 +21,11 @@ public class deathVoiceline : MonoBehaviour
     {
 
     }
+
+    IEnumerator destroySelf()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(gameObject);
+    }
+
 }

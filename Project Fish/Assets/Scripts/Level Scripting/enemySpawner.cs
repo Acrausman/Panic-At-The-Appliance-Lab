@@ -87,10 +87,16 @@ public class enemySpawner : MonoBehaviour
     {
         Vector3 desiredPos = new Vector3(point.position.x, point.position.y, point.position.z);
         GameObject enemyToInst = Instantiate(type, desiredPos, Quaternion.identity);
-        enemyToInst.GetComponent<enemyData>().spawner = gameObject.GetComponent<enemySpawner>();
+        enemyToInst.GetComponentInChildren<enemyData>().spawner = gameObject.GetComponent<enemySpawner>();
         //enemyRoster++;
         
 
+    }
+
+    public void addCount()
+    {
+        print("Counter raised");
+        count++;
     }
 
 }

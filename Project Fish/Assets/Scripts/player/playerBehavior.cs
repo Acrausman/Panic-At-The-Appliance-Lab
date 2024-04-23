@@ -169,7 +169,7 @@ public class playerBehavior : MonoBehaviour
             {
                 if (!(data.currAmmo <= 0))
                 {
-                    print("Fired");
+                    //print("Fired");
                     data.spendAmmo();
                     readyToFire = false;
                     data.currGun.fire();
