@@ -7,6 +7,7 @@ public class playerData : MonoBehaviour
 {
     public static playerData instance;
     public suitVoice voice;
+    public fadeEffect inkEffect;
 
     public AudioClip damage;
     public float maxHealth;
@@ -50,7 +51,7 @@ public class playerData : MonoBehaviour
         //print(waterAmmoReserve);
         //print(sparkAmmoReserve);
         //print(discoAmmoReserve);
-        if (weaponList[0].GetComponent<Gun>()) setCurrGun(weaponList[currWeaponIndex]);
+        if (weaponList[0].GetComponent<Gun>() != null) setCurrGun(weaponList[currWeaponIndex]);
 
         DontDestroyOnLoad(gameObject);
     }
@@ -67,13 +68,13 @@ public class playerData : MonoBehaviour
     
 
 
-    public void takeDamage(float amount)
+    public void takeDamage(float amount, bool ink)
     {
         if (currInv <= 0)
         {
             audioSource.PlayOneShot(damage);
             float healthProp = currHealth / maxHealth;
-            print(healthProp);
+            //print(healthProp);
             currHealth -= amount;
             if (currHealth <= 0)
             {
@@ -87,6 +88,11 @@ public class playerData : MonoBehaviour
             }
             currInv = invTime;
             //StartCoroutine(invincibilityPeriod());
+        }
+
+        if(ink)
+        {
+            inkEffect.In();
         }
 
         

@@ -8,6 +8,7 @@ TagManager:
   - Level Manager
   - SpawnPoint
   - AudioSystem
+  - Ink
   layers:
   - Default
   - TransparentFX

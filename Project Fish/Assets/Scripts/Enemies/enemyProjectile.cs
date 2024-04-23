@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemyProjectile : MonoBehaviour
 {
+    public bool isInk = false;
     public GameObject target;
     public float speed;
     public float damage;
@@ -31,10 +32,10 @@ public class enemyProjectile : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            target.GetComponentInParent<playerData>().takeDamage(damage);
+            target.GetComponentInParent<playerData>().takeDamage(damage, isInk);
+            Destroy(gameObject);
         }
 
-        Destroy(gameObject);
 
     }
 
