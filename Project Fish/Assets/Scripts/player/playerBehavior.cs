@@ -22,6 +22,7 @@ public class playerBehavior : MonoBehaviour
 
     //Movement Variables
     public float movementSpeed;
+    public float currVelocity;
     public float groundDrag;
     public float jumpForce;
     public float airMultiplier;
@@ -52,6 +53,7 @@ public class playerBehavior : MonoBehaviour
 
     private void Update()
     {
+        currVelocity = getVelocity();
         movePlayer();
         if (Input.GetButtonDown("Weapon 1") | Input.GetButtonDown("Weapon 2")| Input.GetButtonDown("Weapon 3"))
         {
@@ -193,13 +195,25 @@ public class playerBehavior : MonoBehaviour
         {
             voice.playMelee();
             readyToFire = false;
-            data.currGun.melee(data.meleeDamage, data.meleeRange);
+            data.currGun.melee(data.meleeDamageScaled, data.meleeRange);
             StartCoroutine((gunRecharge()));
         }
 
     }
 
-
+    public float getVelocity()
+    {
+        List<float> velValues = new List<float>();
+        velValues.Add(Mathf.Abs(rb.velocity.x));
+        velValues.Add(Mathf.Abs(rb.velocity.y));
+        velValues.Add(Mathf.Abs(rb.velocity.z));
+        float highestValue = 0;
+        for(int i = 0; i < velValues.Count; i++)
+        {
+            if (velValues[i] > highestValue) highestValue = velValues[i];
+        }
+        return highestValue;
+    }
 
 
     IEnumerator gunRecharge()

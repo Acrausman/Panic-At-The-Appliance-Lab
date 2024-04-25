@@ -22,6 +22,8 @@ public class playerData : MonoBehaviour
     public float frozenDuration = 5;
     float currFreezeTime = 0;
 
+    playerBehavior behavior;
+
     public float waterAmmoReserve;
     public static float storedWater;
     public float sparkAmmoReserve;
@@ -37,6 +39,7 @@ public class playerData : MonoBehaviour
     public bool canFire = true;
 
     public float meleeDamage = 10;
+    public float meleeDamageScaled;
     public float meleeRange = 10;
 
     public static List<GameObject> weaponList = new List<GameObject>();
@@ -56,6 +59,7 @@ public class playerData : MonoBehaviour
         isDot = false;
         currFreezeTime = 0;
         audioSource = GetComponent<AudioSource>();
+        behavior = GetComponent<playerBehavior>();
         currHealth = maxHealth;
         //print(waterAmmoReserve);
         //print(sparkAmmoReserve);
@@ -68,6 +72,9 @@ public class playerData : MonoBehaviour
 
     private void Update()
     {
+        meleeDamageScaled = meleeDamage * (behavior.currVelocity/10) - 10;
+        if (meleeDamageScaled < 0) meleeDamageScaled = 0;
+
         if(currInv > 0)
         {
             currInv -= 1 * Time.deltaTime;
