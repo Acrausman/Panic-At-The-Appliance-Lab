@@ -15,6 +15,12 @@ public class playerData : MonoBehaviour
     public static float storedHealth;
     public float invTime = 1;
     public float currInv = 0;
+    public bool isDot = false;
+    public float dotPot = 5;
+    float dotTick = 0;
+    public bool isFrozen = false;
+    public float frozenDuration = 5;
+    float currFreezeTime = 0;
 
     public float waterAmmoReserve;
     public static float storedWater;
@@ -46,6 +52,9 @@ public class playerData : MonoBehaviour
     {
         instance = this;
         currInv = 0;
+        isFrozen = false;
+        isDot = false;
+        currFreezeTime = 0;
         audioSource = GetComponent<AudioSource>();
         currHealth = maxHealth;
         //print(waterAmmoReserve);
@@ -63,16 +72,33 @@ public class playerData : MonoBehaviour
         {
             currInv -= 1 * Time.deltaTime;
         }
+        if(isDot)
+        {
+            takeDamage(dotPot, false, false);
+        }
+
+        if(isFrozen)
+        {
+            if (currFreezeTime < frozenDuration)
+            {
+                currFreezeTime += 1 * Time.deltaTime;
+            }
+            else
+            {
+                isFrozen = false;
+                currFreezeTime = 0;
+            }
+        }
     }
  
     
 
 
-    public void takeDamage(float amount, bool ink)
+    public void takeDamage(float amount, bool ink, bool sound)
     {
         if (currInv <= 0)
         {
-            audioSource.PlayOneShot(damage);
+            if(sound)audioSource.PlayOneShot(damage);
             float healthProp = currHealth / maxHealth;
             //print(healthProp);
             currHealth -= amount;
@@ -314,5 +340,19 @@ public class playerData : MonoBehaviour
     public bool isWeaponListIndexValid(int x)
     {
         return weaponList[x];
+    }
+
+    public void sapHealth(float dmg, bool freeze)
+    {
+        print("Taking DOT");
+        isDot = true;
+        dotPot = dmg;
+        isFrozen = freeze;
+    }
+
+    public void stopDot()
+    {
+        print("DOT has stopped");
+        isDot = false;
     }
 }

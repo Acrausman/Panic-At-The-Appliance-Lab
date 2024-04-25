@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class enemyProjectileHoming : MonoBehaviour
 {
+    public AudioClip clip;
+    AudioSource audioSource;
     public float damage;
     public float force = 20;
     Transform target;
@@ -14,6 +16,7 @@ public class enemyProjectileHoming : MonoBehaviour
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         rigidbody = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -30,7 +33,7 @@ public class enemyProjectileHoming : MonoBehaviour
     {
         if (collision.gameObject.GetComponentInParent<playerData>() != null)
         {
-            collision.gameObject.GetComponentInParent<playerData>().takeDamage(damage, false);
+            collision.gameObject.GetComponentInParent<playerData>().takeDamage(damage, false, true);
         }
         GameObject.Destroy(gameObject);
     }
@@ -43,6 +46,7 @@ public class enemyProjectileHoming : MonoBehaviour
     public IEnumerator startup(float x)
     {
         yield return new WaitForSeconds(x);
+        audioSource.PlayOneShot(clip);
         firing = true;
     }
 

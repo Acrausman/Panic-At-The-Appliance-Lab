@@ -32,7 +32,7 @@ public class enemyProjectile : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            target.GetComponentInParent<playerData>().takeDamage(damage, isInk);
+            target.GetComponentInParent<playerData>().takeDamage(damage, isInk, true);
             Destroy(gameObject);
         }
 

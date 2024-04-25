@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class hitboxSpin : MonoBehaviour
 {
+    public AudioClip clip;
+    AudioSource audioSource;
     public float triggerDelay = 0.8f;
     public float amountToRotate = 240;
     public float spinTime = 3;
@@ -20,6 +22,7 @@ public class hitboxSpin : MonoBehaviour
         //endRot = Quaternion.Euler(0,transform.rotation.y + amountToRotate,0);
         collider = GetComponent<BoxCollider>();
         collider.enabled = false;
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -48,6 +51,7 @@ public class hitboxSpin : MonoBehaviour
     IEnumerator spinDelay()
     {
         yield return new WaitForSeconds(triggerDelay);
+        audioSource.PlayOneShot(clip);
         collider.enabled = true;
         spinning = true;
         yield return new WaitForSeconds(spinTime + 0.5f);

@@ -165,7 +165,7 @@ public class playerBehavior : MonoBehaviour
     {
         if(data.currGun != null)
         {
-            if (readyToFire)
+            if (readyToFire && !data.isFrozen)
             {
                 if (!(data.currAmmo <= 0))
                 {

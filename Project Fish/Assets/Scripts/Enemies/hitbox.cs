@@ -16,6 +16,10 @@ public class hitbox : MonoBehaviour
         {
             damageVal = GetComponentInParent<enemyBehaviorPrinter>().meleeDamage;
         }
+        else if(GetComponentInParent<enemyBehaviorBigchills>() != null)
+        {
+            damageVal = GetComponentInParent<enemyBehaviorBigchills>().meleeDamage;
+        }
     }
 
     void Update()
@@ -27,7 +31,7 @@ public class hitbox : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            other.GetComponentInParent<playerData>().takeDamage(damageVal, false);
+            other.GetComponentInParent<playerData>().takeDamage(damageVal, false, true);
         }
     }
 

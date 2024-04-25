@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class enemyBehaviorBigchills : MonoBehaviour
 {
+    enemyData data; 
+    public Image healthBar;
     GameObject player;
     hitboxSpin spin;
 
@@ -13,11 +16,19 @@ public class enemyBehaviorBigchills : MonoBehaviour
 
     public float detectionDistance = 200;
     public float attackDistance = 100;
+    public float meleeDamage = 20;
     public float projectileSpeed = 50;
     public float projectileDamage = 10;
+    public float mistDamagePerSecond = 5;
     public List<GameObject> projectileTypes;
+    public GameObject mistPrefab;
     public List<Transform> projectilePoints;
+    public Transform mistPoint;
     bool readyToAttack;
+
+    public List<AudioClip> missileLines;
+    public List<AudioClip> tongueLines;
+    public List<AudioClip> mistLines;
 
     Animator animator;
     AudioSource audioSource;
@@ -45,6 +56,7 @@ public class enemyBehaviorBigchills : MonoBehaviour
 
     void Awake()
     {
+        data = GetComponent<enemyData>();
         spin = GetComponentInChildren<hitboxSpin>();
         audioSource = gameObject.GetComponent<AudioSource>();
         readyToAttack = true;
@@ -84,6 +96,8 @@ public class enemyBehaviorBigchills : MonoBehaviour
                 break;
 
         }
+        float scaledHealth = data.currHealth / data.maxHealth;
+        healthBar.fillAmount = scaledHealth;
     }
 
 
@@ -150,17 +164,23 @@ public class enemyBehaviorBigchills : MonoBehaviour
 
     void tongueAttack()
     {
+        audioSource.PlayOneShot(chooseClip(tongueLines));
         spin.spin();
         animator.SetTrigger("tongue");
     }
 
     void iceAttack()
     {
+        audioSource.PlayOneShot(chooseClip(mistLines));
+        GameObject newMist = GameObject.Instantiate(mistPrefab, mistPoint);
+        newMist.transform.parent = null;
+        newMist.GetComponent<enemyAOE>().damagePerSecond = mistDamagePerSecond;
         animator.SetTrigger("ice");
     }
 
     void missileAttack()
     {
+        audioSource.PlayOneShot(chooseClip(missileLines));
         animator.SetTrigger("missile");
         for (int i = 0; i < projectilePoints.Count; i++)
         {
@@ -196,6 +216,12 @@ public class enemyBehaviorBigchills : MonoBehaviour
     {
         int x = Random.Range(0, projectileTypes.Count);
         return projectileTypes[x];
+    }
+
+    AudioClip chooseClip(List<AudioClip> set)
+    {
+        int x = Random.Range(0, set.Count);
+        return set[x];
     }
 
 
