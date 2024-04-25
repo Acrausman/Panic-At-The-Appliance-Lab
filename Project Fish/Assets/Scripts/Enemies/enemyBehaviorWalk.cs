@@ -18,22 +18,34 @@ public class enemyBehaviorWalk : MonoBehaviour
     public AudioClip walkSound;
     public AudioClip attackSound;
     public List<AudioClip> aggroLines;
-
+    Rigidbody rigidbody;
+    public float timeToLock = 1;
+    float currLockTime = 0;
+    bool isYLock = false;
+    float yLock = 0;
     bool readyToAttack;
     float baseY;
 
     public bool idle = true;
     void Awake()
     {
+        isYLock = false;
         audioSource = gameObject.GetComponent<AudioSource>();
         target = GameObject.FindGameObjectWithTag("PlayerDetection");
         animator = gameObject.GetComponent<Animator>();
         readyToAttack = true;
         baseY = transform.position.y;
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
+        if (currLockTime < timeToLock)
+        {
+            currLockTime += 1 * Time.deltaTime;
+        }
+        else isYLock = true; yLock = transform.position.y;
+
         if (Vector3.Distance(this.transform.position, target.transform.position) < detectionDistance)
         {
             if (idle)
@@ -64,9 +76,20 @@ public class enemyBehaviorWalk : MonoBehaviour
         animator.SetBool("Running", true);
         audioSource.clip = (walkSound);
         Vector3 desiredPos = new Vector3(target.transform.position.x, baseY, target.transform.position.z);
+        if (isYLock) desiredPos.y = yLock;
         transform.position = Vector3.MoveTowards(transform.position, desiredPos, moveSpeed * Time.deltaTime);
+        //rigidbody.AddForce(desiredPos, ForceMode.Impulse);
         transform.LookAt(target.transform);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Physics.IgnoreCollision(collision.collider, gameObject.GetComponent<Collider>());
+        }
+    }
+
 
     public void attackPlayer()
     {
@@ -80,6 +103,8 @@ public class enemyBehaviorWalk : MonoBehaviour
             StartCoroutine(attackDelay());
         }
     }
+
+    
 
     IEnumerator attackDelay()
     {

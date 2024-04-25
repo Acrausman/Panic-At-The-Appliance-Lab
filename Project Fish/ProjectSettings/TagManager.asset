@@ -9,6 +9,7 @@ TagManager:
   - SpawnPoint
   - AudioSystem
   - Ink
+  - Enemy
   layers:
   - Default
   - TransparentFX
