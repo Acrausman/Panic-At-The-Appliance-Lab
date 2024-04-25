@@ -163,11 +163,16 @@ public class playerBehavior : MonoBehaviour
 
     private void fireGun()
     {
+        Gun.AmmoType ammoType = data.currGun.ammoType;
         if(data.currGun != null)
         {
-            if (readyToFire && !data.isFrozen)
+            if (readyToFire)
             {
-                if (!(data.currAmmo <= 0))
+                if(data.isFrozen && ammoType == Gun.AmmoType.light)
+                {
+
+                }
+                else if (!(data.currAmmo <= 0))
                 {
                     //print("Fired");
                     data.spendAmmo();

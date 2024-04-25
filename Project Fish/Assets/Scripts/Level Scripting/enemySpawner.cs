@@ -12,6 +12,7 @@ public class enemySpawner : MonoBehaviour
     public GameObject iron;
     public GameObject toaster;
     public GameObject printer;
+    public GameObject bigChills;
     public enemySpawnPoint[] spawnPoints;
     bool hasSpawned;
     public int enemyRoster;
@@ -71,6 +72,10 @@ public class enemySpawner : MonoBehaviour
 
                     case enemySpawnPoint.enemyType.printer:
                         spawnEnemy(printer, spawnPoints[i].transform);
+                        break;
+
+                    case enemySpawnPoint.enemyType.biggChills:
+                        spawnEnemy(bigChills, spawnPoints[i].transform);
                         break;
 
                     default:

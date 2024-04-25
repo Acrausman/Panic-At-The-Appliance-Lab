@@ -10,7 +10,8 @@ public class enemySpawnPoint : MonoBehaviour
         airFryer,
         iron,
         toaster,
-        printer
+        printer,
+        biggChills
     }
 
     public enemyType typeToSpawn;
