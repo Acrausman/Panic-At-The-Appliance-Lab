@@ -29,10 +29,27 @@ public class hitbox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //print("Hit");
         if(other.CompareTag("Player"))
         {
+            //print("player hit");
             other.GetComponentInParent<playerData>().takeDamage(damageVal, false, true);
         }
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            //print("player hit");
+            collision.gameObject.GetComponentInParent<playerData>().takeDamage(damageVal, false, true);
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(transform.position, ForceMode.Impulse);
+        }
+        /*else
+        {
+            Physics.IgnoreCollision(collision.collider, gameObject.GetComponent<Collider>());
+        }*/
     }
 
 }
