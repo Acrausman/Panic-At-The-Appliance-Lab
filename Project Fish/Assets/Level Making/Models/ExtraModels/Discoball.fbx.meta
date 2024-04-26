@@ -1,33 +1,14 @@
 fileFormatVersion: 2
-guid: 59f320484587ea54fab1262b2c60f365
+guid: a03fc4c23f0c4c74aa367ac7c95b2758
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable:
+  internalIDToNameTable: []
+  externalObjects:
   - first:
-      74: -6141359625283235966
-    second: rig|Arm-ShotGunAway
-  - first:
-      74: -3834801321920242645
-    second: rig|Arm-ShotGunBack
-  - first:
-      74: 8800085742953831396
-    second: rig|Arm-ShotGunReload
-  - first:
-      74: -3897264863975039038
-    second: rig|Arm-ShotGunShoot
-  - first:
-      74: 6125881596701860766
-    second: shotgun|Shotgun-Away
-  - first:
-      74: 8842001034991074082
-    second: shotgun|Shotgun-Back
-  - first:
-      74: -5998305439128360153
-    second: shotgun|Shotgun-Reload
-  - first:
-      74: 228814490176695290
-    second: shotgun|Shotgun-Shoot
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Discoball_MAT
+    second: {fileID: 2100000, guid: 4315c7ee1b977c14cbd59bca16392fea, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -59,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 2
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -93,7 +74,7 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
@@ -112,7 +93,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.02
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
