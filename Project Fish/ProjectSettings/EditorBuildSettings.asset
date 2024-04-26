@@ -93,7 +93,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level2/Level2Complete.unity
     guid: 0dc2d296f5c8a194eb3f3165481fe885
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
+    path: Assets/Scenes/Level3Stuff.unity
     guid: b80dac09399f627448253c908f41a08f
   - enabled: 1
     path: Assets/Scenes/GoingToBoss.unity
