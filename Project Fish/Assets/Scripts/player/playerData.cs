@@ -10,6 +10,7 @@ public class playerData : MonoBehaviour
     public fadeEffect inkEffect;
 
     public AudioClip damage;
+    public AudioClip inkDamage;
     public float maxHealth;
     public float currHealth;
     public static float storedHealth;
@@ -92,6 +93,7 @@ public class playerData : MonoBehaviour
             }
             else
             {
+                voice.playWaterThawed();
                 isFrozen = false;
                 currFreezeTime = 0;
             }
@@ -105,7 +107,8 @@ public class playerData : MonoBehaviour
     {
         if (currInv <= 0)
         {
-            if(sound)audioSource.PlayOneShot(damage);
+            if (ink && sound) audioSource.PlayOneShot(inkDamage);
+            else if(sound)audioSource.PlayOneShot(damage);
             float healthProp = currHealth / maxHealth;
             //print(healthProp);
             currHealth -= amount;
@@ -355,6 +358,7 @@ public class playerData : MonoBehaviour
         isDot = true;
         dotPot = dmg;
         isFrozen = freeze;
+        if (freeze) voice.playWaterFrozen();
     }
 
     public void stopDot()
