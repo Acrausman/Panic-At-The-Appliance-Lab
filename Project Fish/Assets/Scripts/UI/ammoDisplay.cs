@@ -11,6 +11,7 @@ public class ammoDisplay : MonoBehaviour
     public TextMeshProUGUI storageText;
     public playerData player;
     public Sprite waterSprite;
+    public Image frozenWaterSprite;
     public Color waterColor;
     public Sprite sparkSprite;
     public Color sparkColor;
@@ -21,6 +22,7 @@ public class ammoDisplay : MonoBehaviour
     void Start()
     {
         image = gameObject.GetComponent<Image>();
+        frozenWaterSprite.enabled = false;
     }
 
     void Update()
@@ -32,6 +34,8 @@ public class ammoDisplay : MonoBehaviour
                 case Gun.AmmoType.light:
                     //storageText.text = player.sparkAmmoReserve.ToString();
                     //storageText.color = new Color(sparkColor.r, sparkColor.g, sparkColor.b);
+                    if (player.isFrozen) frozenWaterSprite.enabled = true;
+                    else frozenWaterSprite.enabled = false;
                     image.sprite = waterSprite;
                     //text.color = new Color(waterColor.r, waterColor.g, waterColor.b);
                     break;

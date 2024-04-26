@@ -11,6 +11,8 @@ public class suitVoice : MonoBehaviour
     public AudioClip[] lowHealth;
     public AudioClip[] noSpark;
     public AudioClip[] noWater;
+    public AudioClip[] waterFrozen;
+    public AudioClip[] waterThawed;
     public AudioClip[] sparkRestored;
     public AudioClip[] waterRestored;
     public AudioClip newgun;
@@ -60,6 +62,20 @@ public class suitVoice : MonoBehaviour
         audioSource.Stop();
         int i = Random.Range(0, noWater.Length);
         audioSource.PlayOneShot(noWater[i]);
+    }
+
+    public void playWaterFrozen()
+    {
+        audioSource.Stop();
+        int i = Random.Range(0, waterFrozen.Length);
+        audioSource.PlayOneShot(waterFrozen[i]);
+    }
+
+    public void playWaterThawed()
+    {
+        audioSource.Stop();
+        int i = Random.Range(0, waterThawed.Length);
+        audioSource.PlayOneShot(waterThawed[i]);
     }
 
     public void playSparkRestored()
