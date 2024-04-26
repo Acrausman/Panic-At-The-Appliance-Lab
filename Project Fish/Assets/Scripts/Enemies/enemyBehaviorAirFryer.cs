@@ -13,15 +13,16 @@ public class enemyBehaviorAirFryer : MonoBehaviour
 
     public enemyState currState;
 
-    GameObject target;
+    public GameObject target;
 
     enemyBehaviorFlyShoot behavior;
 
     public float detectionDistance = 20;
     public float chaseSpeed = 10;
     public float attackRange = 10;
-    void Start()
+    void Awake()
     {
+        print("Valid " + gameObject.name);
         currState = enemyState.ide;
         behavior = GetComponentInChildren<enemyBehaviorFlyShoot>();
         target = GameObject.FindGameObjectWithTag("Player");
@@ -32,11 +33,14 @@ public class enemyBehaviorAirFryer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(Vector3.Distance(this.transform.position, target.transform.position).ToString());
         if(Vector3.Distance(this.transform.position, target.transform.position) <= detectionDistance)
         {
+            //print("Looking");
             transform.LookAt(target.transform.position);
             if (Vector3.Distance(this.transform.position, target.transform.position) <= attackRange)
             {
+                print("Attacking");
                 behavior.isChasing = false;
                 behavior.canAttack = true;
                 currState = enemyState.attacking;
@@ -46,7 +50,7 @@ public class enemyBehaviorAirFryer : MonoBehaviour
                 behavior.canAttack = false;
                 behavior.isChasing = true;
                 currState = enemyState.chasing;
-                transform.position = Vector3.MoveTowards(transform.position, target.transform.position, chaseSpeed * Time.deltaTime);
+                //transform.position = Vector3.MoveTowards(transform.position, target.transform.position, chaseSpeed * Time.deltaTime);
             }
         }
         else
