@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemyBehaviorPrinter : MonoBehaviour
 {
-    GameObject player;
+    public GameObject player;
 
     public float moveSpeed = 10;
     public float delayTime = 1;

@@ -13,7 +13,7 @@ public class enemyBehaviorFlyShoot : MonoBehaviour
     public List<GameObject> movePoints;
     public float moveSpeed = 10;
     public float delayTime = 1;
-    float timeInterval;
+    public float timeInterval;
 
     public float projectileSpeed = 50;
     public float projectileDamage = 10;
@@ -25,7 +25,7 @@ public class enemyBehaviorFlyShoot : MonoBehaviour
     Vector3 desiredPoint;
     int previousPoint = 0;
 
-    GameObject target;
+    public GameObject target;
     public bool idle = false;
     public bool readyToMove = true;
     Animator animator;
