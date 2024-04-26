@@ -150,10 +150,10 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Printer_ATTACK
-      takeName: Printer_ALL
+      takeName: Armature.0_IK|Printer_ATTACK
       internalID: 0
-      firstFrame: 201
-      lastFrame: 224
+      firstFrame: 0
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
