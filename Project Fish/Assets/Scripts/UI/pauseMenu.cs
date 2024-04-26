@@ -32,6 +32,9 @@ public class pauseMenu : MonoBehaviour
     public GameObject videoSettingsUI;
     public GameObject audioSettingsUI;
     public GameObject gameplaySettingsUI;
+    public GameObject gameOver;
+    public fadeEffect gameOverFade;
+    float fadeTime;
 
     public string mainMenuString = "MainMenu";
 
@@ -54,7 +57,8 @@ public class pauseMenu : MonoBehaviour
     {
         if(Input.GetButtonDown("Pause"))
         {
-            if (isPaused) Resume();
+            playerData data = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<playerData>();
+            if (isPaused && ! data.isDead) Resume();
             else Pause();
         }
     }
@@ -70,12 +74,26 @@ public class pauseMenu : MonoBehaviour
         isPaused = true;
     }
 
+    public void death()
+    {
+        print("Death");
+        pauseUI.SetActive(true);
+        gameOver.SetActive(true);
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
+        gameOverFade.fadeIn = true;
+        //isPaused = true;
+        StartCoroutine(wait(true));
+    }
+
     public void Resume()
     {
+        print("Resuming");
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         pauseUI.SetActive(false);
         Time.timeScale = 1;
+        gameOver.SetActive(false);
         isPaused = false;
     }
 
@@ -115,6 +133,22 @@ public class pauseMenu : MonoBehaviour
         settingsUI.SetActive(true);
     }
 
+    public void retry()
+    {
+        print("Retry");
+        //gameOver.GetComponentInChildren<fadeEffect>().fadeIn = true;
+        //levelManager1 manager = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<levelManager1>();
+        Time.timeScale = 1;
+       
+        //StartCoroutine(wait(false));
+        //gameOverFade.fadeOut = true;
+        Resume();
+        levelManager1 manager = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<levelManager1>();
+        manager.respawnPlayer();
+        //manager.player.GetComponent<playerData>().isDead = false;
+
+    }
+
     public void MainMenu()
     {
         Time.timeScale = 1;
@@ -150,6 +184,23 @@ public class pauseMenu : MonoBehaviour
     public void ChangeVolume()
     {
         AudioListener.volume = volumeSlider.value;
+    }
+
+    IEnumerator wait(bool death)
+    {
+        print("Start wait");
+        if (death)
+        {
+            yield return new WaitForSeconds(gameOverFade.speed + 0.1f);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            yield return new WaitForSeconds(gameOverFade.speed + 0.1f);
+            print("Start Resume");
+            Resume();
+        }
+
     }
     
 }

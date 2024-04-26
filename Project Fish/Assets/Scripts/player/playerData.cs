@@ -13,6 +13,7 @@ public class playerData : MonoBehaviour
     public AudioClip inkDamage;
     public float maxHealth;
     public float currHealth;
+    public bool isDead;
     public static float storedHealth;
     public float invTime = 1;
     public float currInv = 0;
@@ -59,6 +60,7 @@ public class playerData : MonoBehaviour
         isFrozen = false;
         isDot = false;
         currFreezeTime = 0;
+        isDead = false;
         audioSource = GetComponent<AudioSource>();
         behavior = GetComponent<playerBehavior>();
         currHealth = maxHealth;
@@ -105,7 +107,7 @@ public class playerData : MonoBehaviour
 
     public void takeDamage(float amount, bool ink, bool sound)
     {
-        if (currInv <= 0)
+        if (currInv <= 0 && !isDead)
         {
             if (ink && sound) audioSource.PlayOneShot(inkDamage);
             else if(sound)audioSource.PlayOneShot(damage);
@@ -114,8 +116,11 @@ public class playerData : MonoBehaviour
             currHealth -= amount;
             if (currHealth <= 0)
             {
-                levelManager1 manager = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<levelManager1>();
-                manager.respawnPlayer();
+                isDead = true;
+                behavior.menu.gameObject.SetActive(true);
+                behavior.menu.GetComponent<pauseMenu>().death();
+                //levelManager1 manager = GameObject.FindGameObjectWithTag("Level Manager").GetComponent<levelManager1>();
+                //manager.respawnPlayer();
             }
             if (healthProp <= 0.40)
             {

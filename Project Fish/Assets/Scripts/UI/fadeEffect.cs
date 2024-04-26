@@ -23,6 +23,7 @@ public class fadeEffect : MonoBehaviour
     {
         if(fadeIn)
         {
+            print("Fading");
             if(canvasGroup.alpha < 1)
             {
                 canvasGroup.alpha += speed * Time.deltaTime;
@@ -36,6 +37,7 @@ public class fadeEffect : MonoBehaviour
 
         if (fadeOut)
         {
+            print("fading");
             if (canvasGroup.alpha >= 0)
             {
                 canvasGroup.alpha -= speed * Time.deltaTime;
@@ -61,7 +63,7 @@ public class fadeEffect : MonoBehaviour
     IEnumerator autoFadeOut()
     {
         print("called");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1.5f);
         Out();
     }
 }

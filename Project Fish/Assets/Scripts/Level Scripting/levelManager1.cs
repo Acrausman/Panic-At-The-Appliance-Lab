@@ -83,6 +83,7 @@ public class levelManager1 : MonoBehaviour
         SceneManager.MoveGameObjectToScene(player, reScene);
         playerObj.transform.localPosition = new Vector3(pointToMove.x, pointToMove.y, pointToMove.z);
         playerObj.GetComponent<playerData>().currHealth = playerObj.GetComponent<playerData>().maxHealth;
+        playerObj.GetComponent<playerData>().isDead = false;
 
 
 

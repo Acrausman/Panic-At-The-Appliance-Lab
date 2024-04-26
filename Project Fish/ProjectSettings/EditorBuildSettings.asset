@@ -101,4 +101,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GoingToLevel2.unity
     guid: 28f4e90366bc9b344bbc6a9194bae610
+  - enabled: 1
+    path: Assets/Scenes/BossIntroScene.unity
+    guid: 8318ba63bac539146a2abdc707ee3200
+  - enabled: 1
+    path: Assets/Scenes/Level3/Level 3.unity
+    guid: 6e8d255ba2c0dbd4da87720bd8db6b8c
   m_configObjects: {}

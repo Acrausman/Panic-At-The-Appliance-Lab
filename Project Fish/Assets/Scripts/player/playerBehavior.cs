@@ -55,7 +55,7 @@ public class playerBehavior : MonoBehaviour
     {
         currVelocity = getVelocity();
         movePlayer();
-        if (Input.GetButtonDown("Weapon 1") | Input.GetButtonDown("Weapon 2")| Input.GetButtonDown("Weapon 3"))
+        if (Input.GetButtonDown("Weapon 1") | Input.GetButtonDown("Weapon 2")| Input.GetButtonDown("Weapon 3") | Input.GetButtonDown("Weapon 4"))
         {
             string weapInput = Input.inputString;
             switch(weapInput)
@@ -70,6 +70,9 @@ public class playerBehavior : MonoBehaviour
 
                 case "3":
                     if(data.isWeaponListIndexValid(2)) data.switchWeapon(2);
+                    break;
+                case "4":
+                    if(data.isWeaponListIndexValid(3)) data.switchWeapon(3);
                     break;
 
                 default:
