@@ -30,7 +30,7 @@ public class enemyData : MonoBehaviour
         {
             if(spawner != null)
             {
-                print("Spawner Valid");
+                //print("Spawner Valid");
                 spawner.addCount();
             }
             if (transform.parent != null) Destroy(transform.parent.gameObject);

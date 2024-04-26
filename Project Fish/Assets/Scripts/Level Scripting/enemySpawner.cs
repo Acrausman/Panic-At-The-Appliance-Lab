@@ -15,6 +15,7 @@ public class enemySpawner : MonoBehaviour
     public GameObject bigChills;
     public enemySpawnPoint[] spawnPoints;
     bool hasSpawned;
+    bool changedMusic;
     public int enemyRoster;
     public int count;
     public slidingDoor door;
@@ -24,6 +25,7 @@ public class enemySpawner : MonoBehaviour
 
     void Start()
     {
+        changedMusic = false;
         system = GameObject.FindGameObjectWithTag("AudioSystem").GetComponent<audioSystem>(); 
         audioSource = gameObject.GetComponent<AudioSource>();
         hasSpawned = false;
@@ -38,9 +40,14 @@ public class enemySpawner : MonoBehaviour
         if(count >= enemyRoster && door != null)
         {
             system.returnToDefault();
-            print("Destroyed");
+            //print("Destroyed");
             int clip = Random.Range(0,clearSound.Length);
-            if(arena)audioSource.PlayOneShot(clearSound[clip]); door.canOpen = true;
+            if (arena)
+            {
+                if(!changedMusic)audioSource.PlayOneShot(clearSound[clip]); changedMusic = true;
+                door.canOpen = true;
+            }
+            //print("Activated");
             Destroy(gameObject);
         }
     }
@@ -100,7 +107,7 @@ public class enemySpawner : MonoBehaviour
 
     public void addCount()
     {
-        print("Counter raised");
+        //print("Counter raised");
         count++;
     }
 

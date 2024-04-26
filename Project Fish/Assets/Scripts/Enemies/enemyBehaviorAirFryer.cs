@@ -22,7 +22,7 @@ public class enemyBehaviorAirFryer : MonoBehaviour
     public float attackRange = 10;
     void Awake()
     {
-        print("Valid " + gameObject.name);
+        //print("Valid " + gameObject.name);
         currState = enemyState.ide;
         behavior = GetComponentInChildren<enemyBehaviorFlyShoot>();
         target = GameObject.FindGameObjectWithTag("Player");
@@ -40,7 +40,7 @@ public class enemyBehaviorAirFryer : MonoBehaviour
             transform.LookAt(target.transform.position);
             if (Vector3.Distance(this.transform.position, target.transform.position) <= attackRange)
             {
-                print("Attacking");
+                //print("Attacking");
                 behavior.isChasing = false;
                 behavior.canAttack = true;
                 currState = enemyState.attacking;
