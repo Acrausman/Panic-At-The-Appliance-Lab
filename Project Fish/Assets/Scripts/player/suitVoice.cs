@@ -15,6 +15,7 @@ public class suitVoice : MonoBehaviour
     public AudioClip[] waterThawed;
     public AudioClip[] sparkRestored;
     public AudioClip[] waterRestored;
+    public AudioClip[] discRestored;
     public AudioClip newgun;
     public AudioClip[] arenaComplete;
     public AudioClip[] death;
@@ -90,6 +91,13 @@ public class suitVoice : MonoBehaviour
         audioSource.Stop();
         int i = Random.Range(0, waterRestored.Length);
         audioSource.PlayOneShot(waterRestored[i]);
+    }
+
+    public void playDiscRestored()
+    {
+        audioSource.Stop();
+        int i = Random.Range(0, discRestored.Length);
+        audioSource.PlayOneShot(discRestored[i]);
     }
 
     public void playNewGun()

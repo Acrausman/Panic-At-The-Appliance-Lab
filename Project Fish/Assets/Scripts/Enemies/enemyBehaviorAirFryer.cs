@@ -33,7 +33,7 @@ public class enemyBehaviorAirFryer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(Vector3.Distance(this.transform.position, target.transform.position).ToString());
+        //print(Vector3.Distance(this.transform.position, target.transform.position).ToString());
         if(Vector3.Distance(this.transform.position, target.transform.position) <= detectionDistance)
         {
             //print("Looking");

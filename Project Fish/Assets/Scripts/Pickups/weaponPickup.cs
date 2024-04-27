@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class weaponPickup : MonoBehaviour
 {
+    public boxAmmo box;
+    public int ammo = 50;
     bool used = false;
     public GameObject weapon;
     Gun gun;
@@ -28,9 +30,24 @@ public class weaponPickup : MonoBehaviour
             if(!used)
             {
                 used = true;
+                bool ignore = false;
                 playerData data = other.GetComponentInParent<playerData>();
-                data.addWeapon(weapon);
-                data.setCurrGun(data.getWeaponList()[gun.index]);
+                for(int i = 0; i < data.getWeaponList().Count; i++)
+                {
+                    Gun gunToCheck = data.getWeaponList()[i].GetComponent<Gun>();
+                    //print(gunToCheck.gameObject.name);
+                    if (weapon.GetComponent<Gun>().gunType == gunToCheck.gunType)
+                    {
+                        ignore = true;
+                        //break;
+                    }
+                }               
+                if (!ignore)
+                {
+                    data.addWeapon(weapon);
+                    data.setCurrGun(data.getWeaponList()[gun.index]);                   
+                }
+                else data.addAmmo(box, ammo);
                 Destroy(gameObject);
             }
         }

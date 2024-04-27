@@ -14,7 +14,8 @@ public class Gun : MonoBehaviour
     {
         pistol,
         smg,
-        shotgun
+        shotgun,
+        gatling
     }
     public Type gunType;
 

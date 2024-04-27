@@ -9,6 +9,10 @@ public class levelManager1 : MonoBehaviour
 
     public GameObject player;
     public GameObject playerObj;
+    playerData data;
+    public float defaultWaterAmmo = 300;
+    public float defaultSparkAmmo = 50;
+    public float defaultDiscoAmmo = 50;
 
     public string mainScene;
     public string firstScene;
@@ -28,7 +32,15 @@ public class levelManager1 : MonoBehaviour
     void Awake()
     {
         SceneManager.LoadSceneAsync(firstScene,LoadSceneMode.Additive);
-        if(!isFirstLevel)playerObj.GetComponent<playerData>().restoreInventory();
+        data = playerObj.GetComponent<playerData>();
+        if (!isFirstLevel) playerObj.GetComponent<playerData>().restoreInventory();
+        else
+        {
+            data.clearWeaponList();
+            data.waterAmmoReserve = defaultWaterAmmo;
+            data.sparkAmmoReserve = defaultSparkAmmo;
+            data.discoAmmoReserve = defaultDiscoAmmo;
+        }
     }
 
     void Update()

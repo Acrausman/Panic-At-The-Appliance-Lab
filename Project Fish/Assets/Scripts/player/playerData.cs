@@ -150,6 +150,11 @@ public class playerData : MonoBehaviour
 
     }
 
+    public void clearWeaponList()
+    {
+        weaponList = new List<GameObject>();
+    }
+
     public void setCurrGun(GameObject newWeapon)
     {
         if (currGun)
@@ -262,26 +267,27 @@ public class playerData : MonoBehaviour
         switch(box.ammoType)
         {
             case boxAmmo.AmmoType.water:
-                print("Activated");
+                //print("Activated");
                 if(currGunAmmoType == Gun.AmmoType.light) maxAmmo += amount;
                 else waterAmmoReserve += amount;
                 voice.playWaterRestored();
                 break;
 
             case boxAmmo.AmmoType.spark:
-                print("Activated");
+                //print("Activated");
                 if (currGunAmmoType == Gun.AmmoType.medium) maxAmmo += amount;
                 else sparkAmmoReserve += amount;
                 voice.playSparkRestored();
                 break;
 
             case boxAmmo.AmmoType.disco:
-                print("Activated");
+                //print("Activated");
                 if (currGunAmmoType == Gun.AmmoType.heavy) maxAmmo += amount;
                 else discoAmmoReserve += amount;
+                voice.playDiscRestored();
                 break;
             default:
-                print("Activated");
+                //print("Activated");
                 if (currGunAmmoType == Gun.AmmoType.light) maxAmmo += amount;
                 else waterAmmoReserve += amount;
                 break;
@@ -332,7 +338,7 @@ public class playerData : MonoBehaviour
 
     public void restoreInventory()
     {
-        print("Restored Inventory");
+        //print("Restored Inventory");
         currHealth = storedHealth;
         waterAmmoReserve = storedWater;
         sparkAmmoReserve = storedSpark;
@@ -359,7 +365,7 @@ public class playerData : MonoBehaviour
 
     public void sapHealth(float dmg, bool freeze)
     {
-        print("Taking DOT");
+        //print("Taking DOT");
         isDot = true;
         dotPot = dmg;
         isFrozen = freeze;
@@ -368,7 +374,7 @@ public class playerData : MonoBehaviour
 
     public void stopDot()
     {
-        print("DOT has stopped");
+        //print("DOT has stopped");
         isDot = false;
     }
 }

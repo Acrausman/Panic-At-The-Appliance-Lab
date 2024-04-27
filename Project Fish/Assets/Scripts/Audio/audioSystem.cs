@@ -106,7 +106,7 @@ public class audioSystem : MonoBehaviour
                 track1.volume = cl1;
                 track2.volume = cl2;
                 time += 1 * Time.deltaTime;
-                print(time.ToString());
+                //print(time.ToString());
                 
             }
 

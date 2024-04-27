@@ -17,10 +17,12 @@ public class enemyBehaviorWalkShoot : MonoBehaviour
     public GameObject projectile;
     public Transform projectilePoint;
     bool readyToAttack;
+    bool idle;
 
     Animator animator;
     AudioSource audioSource;
     public List<AudioClip> aggroLines;
+    public List<AudioClip> shootLines;
 
     public enum enemyState
     {
@@ -39,6 +41,7 @@ public class enemyBehaviorWalkShoot : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         animator = gameObject.GetComponent<Animator>();
 
+        idle = true;
         currState = enemyState.idle;
     }
 
@@ -55,12 +58,14 @@ public class enemyBehaviorWalkShoot : MonoBehaviour
                 break;
 
             case enemyState.moving:
+                if (idle) audioSource.PlayOneShot(chooseSound(aggroLines)); idle = false;
                 if (checkPlayerdist(attackDistance)) currState = enemyState.attacking;
                 else if(checkPlayerdist(detectionDistance)) moveTowardsPlayer();
                 else currState = enemyState.idle;
                 break;
 
             case enemyState.attacking:
+                if (idle) audioSource.PlayOneShot(chooseSound(aggroLines)); idle = false;
                 if (checkPlayerdist(attackDistance)) attackPlayer();
                 else if(checkPlayerdist(detectionDistance)) currState = enemyState.moving;
                 break;
@@ -97,6 +102,7 @@ public class enemyBehaviorWalkShoot : MonoBehaviour
         transform.LookAt(targetPos);
         if (readyToAttack)
         {
+            audioSource.PlayOneShot(chooseSound(shootLines));
             animator.SetBool("moving", false);
             animator.SetBool("attacking", true);
 
@@ -110,6 +116,12 @@ public class enemyBehaviorWalkShoot : MonoBehaviour
             StartCoroutine(attackDelay());
         }
         
+    }
+
+    AudioClip chooseSound(List<AudioClip> clips)
+    {
+        int i = Random.Range(0, clips.Count);
+        return clips[i];
     }
 
     IEnumerator attackDelay()
