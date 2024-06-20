@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{8e1192d3-a8bf-4f51-87fa-1f1ea9bf4ec8}">
+		<property name="assetPath">
+			<value>studentTaunt02002.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.6497959183673467</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1968d3d6-4ccb-48e4-80c2-8ff08de73320}</destination>
+		</relationship>
+	</object>
+</objects>
