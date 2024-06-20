@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f4fe40a6-b43f-445c-9372-5b96e7ab093a}">
+		<property name="assetPath">
+			<value>bkfl.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>40</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>8.2599999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1968d3d6-4ccb-48e4-80c2-8ff08de73320}</destination>
+		</relationship>
+	</object>
+</objects>
