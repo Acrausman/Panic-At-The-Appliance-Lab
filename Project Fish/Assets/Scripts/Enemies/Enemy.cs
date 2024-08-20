@@ -7,8 +7,10 @@ public class Enemy : MonoBehaviour
 {
     public float maxHealth;
     float currHealth;
+    public float detectionDistance = 100;
     public float moveSpeed = 20;
     public float attackDist = 5;
+    public float attackDamage = 10;
     public enum enemyState
     {
         idle,
@@ -21,28 +23,29 @@ public class Enemy : MonoBehaviour
     NavMeshAgent agent;
     Animator animator;
 
+    public enemySpawner spawner;
     public GameObject deathPrefab;
+
+    public AudioClip[] aggroLines;
+
     GameObject player;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
 
         currHealth = maxHealth;
         agent.speed = moveSpeed;
         agent.stoppingDistance = attackDist;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Vector3.Distance(transform.position, player.transform.position) <= attackDist)
         {
-            agent.isStopped = true;
-            agent.SetDestination(transform.position);
-            currState = enemyState.attacking;
+            attack();
         }
         else
         {
@@ -60,6 +63,13 @@ public class Enemy : MonoBehaviour
         //agent.isStopped = false;
         transform.LookAt(player.transform);
         agent.SetDestination(player.transform.position);
+    }
+
+    public virtual void attack()
+    {
+        agent.isStopped = true;
+        agent.SetDestination(transform.position);
+        currState = enemyState.attacking;
     }
 
     void updateAnimation()

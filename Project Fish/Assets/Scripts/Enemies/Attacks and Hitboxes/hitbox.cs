@@ -8,7 +8,11 @@ public class hitbox : MonoBehaviour
 
     void Awake()
     {
-        if(GetComponentInParent<enemyBehaviorWalk>() != null)
+        if(GetComponentInParent<CoffeeMaker>() != null)
+        {
+            damageVal = GetComponentInParent<CoffeeMaker>().attackDamage;
+        }
+        else if(GetComponentInParent<enemyBehaviorWalk>() != null)
         {
             damageVal = GetComponentInParent<enemyBehaviorWalk>().attackDamage;
         }
