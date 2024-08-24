@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
 
     NavMeshAgent agent;
     Animator animator;
+    AudioSource audioSource;
 
     public enemySpawner spawner;
     public GameObject deathPrefab;
@@ -35,6 +36,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         animator = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
 
         currHealth = maxHealth;
         agent.speed = moveSpeed;
@@ -70,6 +72,28 @@ public class Enemy : MonoBehaviour
         agent.isStopped = true;
         agent.SetDestination(transform.position);
         currState = enemyState.attacking;
+    }
+
+    public void takeDamage(float amount)
+    {
+        //audioSource.PlayOneShot(hitSound);
+        currHealth -= amount;
+        if (currHealth <= 0)
+        {
+            if (spawner != null)
+            {
+                //print("Spawner Valid");
+                spawner.addCount();
+            }
+            if (transform.parent != null) Destroy(transform.parent.gameObject);
+            else
+            {
+                Vector3 spawnVect = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+                GameObject death = Instantiate(deathPrefab, spawnVect, Quaternion.identity);
+                Destroy(gameObject);
+            }
+
+        }
     }
 
     void updateAnimation()
