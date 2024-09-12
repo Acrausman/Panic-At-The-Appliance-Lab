@@ -9,91 +9,91 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 6239ad682bfb18a429326204d63c7b60
   - enabled: 1
-    path: Assets/Scenes/Level 1/Level 1.unity
+    path: Assets/Scenes/OldLevels/Level 1/Level 1.unity
     guid: 027e87355f80dec46a35d2088644ec4c
   - enabled: 1
-    path: Assets/Scenes/Level 1/Movement Tutorial.unity
+    path: Assets/Scenes/OldLevels/Level 1/Movement Tutorial.unity
     guid: c005f900b09e6af4a8097a1a6b22d4a6
   - enabled: 1
-    path: Assets/Scenes/Level 1/Arena 1.unity
+    path: Assets/Scenes/OldLevels/Level 1/Arena 1.unity
     guid: 5ca5f39178af78f4cb38dcaa0d43cac1
   - enabled: 1
-    path: Assets/Scenes/Level 1/SMG Room.unity
+    path: Assets/Scenes/OldLevels/Level 1/SMG Room.unity
     guid: 9a0a498bfd389e54188b9f73a9354fbe
   - enabled: 1
-    path: Assets/Scenes/Level 1/Arena 2.unity
+    path: Assets/Scenes/OldLevels/Level 1/Arena 2.unity
     guid: 92e81fb4b45f3c74ca9b65405c6cb09b
   - enabled: 1
-    path: Assets/Scenes/Level 1/Arena 3.unity
+    path: Assets/Scenes/OldLevels/Level 1/Arena 3.unity
     guid: df7d733691cd22147856d841abbdae13
   - enabled: 1
-    path: Assets/Scenes/Level 1/Arena Side Room 1.unity
+    path: Assets/Scenes/OldLevels/Level 1/Arena Side Room 1.unity
     guid: fd4ed39e8180ef544b6e74d355515e15
   - enabled: 1
-    path: Assets/Scenes/Level 1/Arena Side Room 2.unity
+    path: Assets/Scenes/OldLevels/Level 1/Arena Side Room 2.unity
     guid: 22b55090688821045bc1fac9decaa613
   - enabled: 1
-    path: Assets/Scenes/Level 1/Final Leadup.unity
+    path: Assets/Scenes/OldLevels/Level 1/Final Leadup.unity
     guid: 7800f3a5034d0044c8ad6c88249e3894
   - enabled: 1
-    path: Assets/Scenes/Level 1/Shotgun Room.unity
+    path: Assets/Scenes/OldLevels/Level 1/Shotgun Room.unity
     guid: abe764805a819c040b600ae21173a5a3
   - enabled: 1
-    path: Assets/Scenes/Level 1/Victory Trigger Room.unity
+    path: Assets/Scenes/OldLevels/Level 1/Victory Trigger Room.unity
     guid: ab1c3a25e1015e24e85d47027df25b8b
   - enabled: 1
     path: Assets/Scenes/VictoryScene.unity
     guid: a9a269a1fab93fc4a9a95ed3c3ca0f7c
   - enabled: 1
-    path: Assets/Scenes/Level2/Level 2.unity
+    path: Assets/Scenes/OldLevels/Level2/Level 2.unity
     guid: 82d70f0819c1b40409923476169cb9b2
   - enabled: 1
-    path: Assets/Scenes/Level2/Arena1OverAndUnder.unity
+    path: Assets/Scenes/OldLevels/Level2/Arena1OverAndUnder.unity
     guid: dfef43b280c3057468341a9a11b908ae
   - enabled: 1
-    path: Assets/Scenes/Level2/Arena2Pits.unity
+    path: Assets/Scenes/OldLevels/Level2/Arena2Pits.unity
     guid: 06dcb66635ba7854fb87c04391d7a728
   - enabled: 1
-    path: Assets/Scenes/Level2/BETAComplete.unity
+    path: Assets/Scenes/OldLevels/Level2/BETAComplete.unity
     guid: 1fc3eab3d04cb4e408701e528567203c
   - enabled: 1
-    path: Assets/Scenes/Level2/Part1MeetPrinter.unity
+    path: Assets/Scenes/OldLevels/Level2/Part1MeetPrinter.unity
     guid: 2f64c6caaf3eb674ca97f5157bf6ee2f
   - enabled: 1
-    path: Assets/Scenes/Level2/Part2MazeA.unity
+    path: Assets/Scenes/OldLevels/Level2/Part2MazeA.unity
     guid: a65d4c70103215e46ae023bd2e0c2424
   - enabled: 1
-    path: Assets/Scenes/Level2/Part2MazeB.unity
+    path: Assets/Scenes/OldLevels/Level2/Part2MazeB.unity
     guid: 130110ef140462144b6fb0f837179db4
   - enabled: 1
     path: Assets/Scenes/IntroCutscene.unity
     guid: ca740c1dd85c9604e8f7d887567366f1
   - enabled: 1
-    path: Assets/Scenes/Level2/Part3DiscoA.unity
+    path: Assets/Scenes/OldLevels/Level2/Part3DiscoA.unity
     guid: 9ac6a4f0cd78c9448b3c205eb03586ae
   - enabled: 1
-    path: Assets/Scenes/Level2/Part3DiscoB.unity
+    path: Assets/Scenes/OldLevels/Level2/Part3DiscoB.unity
     guid: f6852f8899f359d40897754059b227c8
   - enabled: 1
-    path: Assets/Scenes/Level2/Arena3ThePit.unity
+    path: Assets/Scenes/OldLevels/Level2/Arena3ThePit.unity
     guid: 1e29944be42114040876139f96338e6d
   - enabled: 1
-    path: Assets/Scenes/Level2/Part4Amongus.unity
+    path: Assets/Scenes/OldLevels/Level2/Part4Amongus.unity
     guid: 7d3845e3cabbb7e409b675ccdab18925
   - enabled: 1
-    path: Assets/Scenes/Level2/Arena4.unity
+    path: Assets/Scenes/OldLevels/Level2/Arena4.unity
     guid: 438620150f1566549bb2e1ed695a6e2a
   - enabled: 1
-    path: Assets/Scenes/Level2/Part5Pinball.unity
+    path: Assets/Scenes/OldLevels/Level2/Part5Pinball.unity
     guid: 3fd96b52dbe16d2458f0a6c8e2da1a7e
   - enabled: 1
-    path: Assets/Scenes/Level2/Arena5Cone.unity
+    path: Assets/Scenes/OldLevels/Level2/Arena5Cone.unity
     guid: 415a5c5c49adeda42b834748b44ad62e
   - enabled: 1
-    path: Assets/Scenes/Level2/Level2Complete.unity
+    path: Assets/Scenes/OldLevels/Level2/Level2Complete.unity
     guid: 0dc2d296f5c8a194eb3f3165481fe885
   - enabled: 1
-    path: Assets/Scenes/Level3/Level3Stuff.unity
+    path: Assets/Scenes/OldLevels/Level3/Level3Stuff.unity
     guid: b80dac09399f627448253c908f41a08f
   - enabled: 1
     path: Assets/Scenes/GoingToBoss.unity
@@ -105,6 +105,6 @@ EditorBuildSettings:
     path: Assets/Scenes/BossIntroScene.unity
     guid: 8318ba63bac539146a2abdc707ee3200
   - enabled: 1
-    path: Assets/Scenes/Level3/Level 3.unity
+    path: Assets/Scenes/OldLevels/Level3/Level 3.unity
     guid: 6e8d255ba2c0dbd4da87720bd8db6b8c
   m_configObjects: {}
