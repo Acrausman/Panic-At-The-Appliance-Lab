@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pistol
+  m_Name: PistolDepleted
   m_Shader: {fileID: -6465566751694194690, guid: ef580dcf4968400478f3f49c831c96e4, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -34,7 +34,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - MainTex:
-        m_Texture: {fileID: 2800000, guid: 1cf07593fcbd7a94298d555a054bf600, type: 3}
+        m_Texture: {fileID: 2800000, guid: 826e7a18d39f6eb499665e03d471c5ed, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Mask_R_Emission:
