@@ -12,6 +12,10 @@ public class hitbox : MonoBehaviour
         {
             damageVal = GetComponentInParent<CoffeeMaker>().attackDamage;
         }
+        else if(GetComponentInParent<Iron>() != null)
+        {
+            damageVal = GetComponentInParent<Iron>().attackDamage;
+        }
         else if(GetComponentInParent<enemyBehaviorWalk>() != null)
         {
             damageVal = GetComponentInParent<enemyBehaviorWalk>().attackDamage;
@@ -36,7 +40,7 @@ public class hitbox : MonoBehaviour
         //print("Hit");
         if(other.CompareTag("Player"))
         {
-            //print("player hit");
+            print("player hit");
             other.GetComponentInParent<playerData>().takeDamage(damageVal, false, true);
         }
 
