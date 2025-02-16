@@ -24,6 +24,10 @@ public class playerBehavior : MonoBehaviour
     public float movementSpeed;
     public float currVelocity;
     public float groundDrag;
+    public float maxGroundDrag;
+    public float minGroundDrag;
+    public float dragDecay;
+    public float holdTime;
     public float jumpForce;
     public float airMultiplier;
     public float playerHeight;
@@ -46,7 +50,7 @@ public class playerBehavior : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToFire = true;
-
+        holdTime = 0;
         data = gameObject.GetComponent<playerData>();
 
     }
@@ -101,11 +105,20 @@ public class playerBehavior : MonoBehaviour
         if(horizontalInput != 0 || verticalInput != 0)
         {
             camMovement(true);
+            holdTime += 1 * Time.deltaTime;
+            groundDrag -= holdTime * dragDecay;
+            groundDrag = Mathf.Clamp(groundDrag, minGroundDrag, maxGroundDrag);
         }
         else
         {
             camMovement(false);
+            holdTime -= 1 * Time.deltaTime;
+            holdTime = Mathf.Clamp(holdTime, 0, holdTime);
+            groundDrag += holdTime * dragDecay;
+            groundDrag = Mathf.Clamp(groundDrag, minGroundDrag, maxGroundDrag);
         }
+
+        
 
         //Set Directions
         Vector3 camForward = cam.forward;
