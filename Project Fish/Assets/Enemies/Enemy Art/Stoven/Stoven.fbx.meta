@@ -1,0 +1,196 @@
+fileFormatVersion: 2
+guid: 4fce3bccd8a8a01409df51bfb18f86c1
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: -5305501689805306331
+    second: "B\xE9zierCurve.005|FlameTest"
+  - first:
+      74: -3645289672096552385
+    second: "B\xE9zierCurve.005|FlameTest.001"
+  - first:
+      74: -4128008990937253246
+    second: "B\xE9zierCurve.005|FlameTest.002"
+  - first:
+      74: 1225573188313339990
+    second: "B\xE9zierCurve.005|FlameTest.003"
+  - first:
+      74: 7331552965466955240
+    second: "B\xE9zierCurve.005|FlameTest.004"
+  - first:
+      74: -5759064350212102597
+    second: "B\xE9zierCurve.004|FlameTest"
+  - first:
+      74: 1908189801561641589
+    second: "B\xE9zierCurve.004|FlameTest.001"
+  - first:
+      74: 1584927740328238916
+    second: "B\xE9zierCurve.004|FlameTest.002"
+  - first:
+      74: -5706368424560005929
+    second: "B\xE9zierCurve.004|FlameTest.003"
+  - first:
+      74: -1937274878357645693
+    second: "B\xE9zierCurve.004|FlameTest.004"
+  - first:
+      74: 8493027214505505525
+    second: EMP_Displace|FlameTest
+  - first:
+      74: 8751988497221808821
+    second: EMP_Displace|FlameTest.001
+  - first:
+      74: 930196759995900074
+    second: EMP_Displace|FlameTest.002
+  - first:
+      74: 5973302581009013012
+    second: EMP_Displace|FlameTest.003
+  - first:
+      74: -6716851386732024157
+    second: EMP_Displace|FlameTest.004
+  - first:
+      74: 1237736965939250471
+    second: EMP_Embers|FlameTest
+  - first:
+      74: 545924102319775130
+    second: EMP_Embers|FlameTest.001
+  - first:
+      74: 5127536041124464602
+    second: EMP_Embers|FlameTest.002
+  - first:
+      74: -6727959545805556076
+    second: EMP_Embers|FlameTest.003
+  - first:
+      74: -1388697903119268601
+    second: EMP_Embers|FlameTest.004
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FireLineArt
+    second: {fileID: 2100000, guid: e97fd9f729da93941b2e432cc0173ea5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LineArt
+    second: {fileID: 2100000, guid: 1ca54f6cd31a12843839a9df5df8c283, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StovenEmbers
+    second: {fileID: 2100000, guid: 24747fd30ae0a1545bb0f885fa99cc39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StovenEmbers_Mustache
+    second: {fileID: 2100000, guid: daacb26c132e5684e980f9138b6e5b65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StovenFire
+    second: {fileID: 2100000, guid: 20a1c5c4bca9d8e4d985f489dc48d116, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stoven_MAT
+    second: {fileID: 2100000, guid: 673c3f2534b261548be3ce6e02dfdb71, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.01
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
