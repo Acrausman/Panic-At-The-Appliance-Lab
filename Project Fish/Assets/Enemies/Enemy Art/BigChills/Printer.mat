@@ -94,11 +94,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Brightness_Rim: 1.12
-    - Rim_Power: 1.57
-    - Toon_Ramp_Offset: 0.403
+    - Brightness_Rim: 0
+    - Rim_Power: 0
+    - Toon_Ramp_Offset: 0.622
     - Toon_Ramp_Smoothness: 0
     - _AlphaClip: 0
+    - _Ambient: 0
     - _BUILTIN_QueueControl: -1
     - _BUILTIN_QueueOffset: 0
     - _Blend: 0
@@ -133,6 +134,7 @@ Material:
     - _SrcBlend: 1
     - _Surface: 0
     - _ToonRampOffest: 0
+    - _ToonRampOffsetPoint: 0
     - _ToonRampSmoothness: 0
     - _USE_SCREEN_SPACE: 0
     - _UVSec: 0
