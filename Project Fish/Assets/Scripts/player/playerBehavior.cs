@@ -13,6 +13,7 @@ public class playerBehavior : MonoBehaviour
     //Script References
     public pauseMenu menu;
     playerData data;
+    public CameraAnimation cameraAnimation;
 
     //Input Variables
     public Transform orientation;
@@ -33,13 +34,15 @@ public class playerBehavior : MonoBehaviour
     public float playerHeight;
     public LayerMask whatIsGround;
     public bool grounded;
-    public float camSpeed;
+    /*public float camSpeed;
     public float camPosDefault;
     public float movingOffset;
+    public float tiltOffset;*/
+
+
 
     //Weapon Variables
     public bool readyToFire;
-
 
 
     private void Start()
@@ -104,14 +107,14 @@ public class playerBehavior : MonoBehaviour
 
         if(horizontalInput != 0 || verticalInput != 0)
         {
-            camMovement(true);
+            camMovement(true, horizontalInput, verticalInput);
             holdTime += 1 * Time.deltaTime;
             groundDrag -= holdTime * dragDecay;
             groundDrag = Mathf.Clamp(groundDrag, minGroundDrag, maxGroundDrag);
         }
         else
         {
-            camMovement(false);
+            camMovement(false, horizontalInput, verticalInput);
             holdTime -= 1 * Time.deltaTime;
             holdTime = Mathf.Clamp(holdTime, 0, holdTime);
             groundDrag += holdTime * dragDecay;
@@ -142,20 +145,26 @@ public class playerBehavior : MonoBehaviour
         SpeedControl();
     }
 
-    private void camMovement(bool moving)
+    private void camMovement(bool moving, float x, float y)
     {
+        /*
         if(moving)
         {
+           
            if(camPos.localPosition.y > camPosDefault - movingOffset)
             {
                 //print("Moving down");
                 camPos.localPosition = Vector3.MoveTowards(camPos.localPosition, new Vector3(0, camPosDefault - movingOffset, 0), camSpeed);
+
             }
+
+
+
             
         }
         else
         {
-            //print("Moving up");
+            
             if(camPos.localPosition.y < camPosDefault)
             {
                 camPos.localPosition = Vector3.MoveTowards(camPos.localPosition, new Vector3(0, camPosDefault, 0), camSpeed);
@@ -165,7 +174,7 @@ public class playerBehavior : MonoBehaviour
                 camPos.localPosition = new Vector3(0,camPosDefault,0);
             }
 
-        }
+        }*/
 
     }
 
@@ -216,6 +225,7 @@ public class playerBehavior : MonoBehaviour
         }
 
     }
+
 
     public float getVelocity()
     {
