@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: abbcf6812fff2884da98f3f1565af15c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Mask_R_Emission:
@@ -82,6 +82,7 @@ Material:
     - Rim_Power: 5
     - Toon_Ramp_Offset: 0.5
     - Toon_Ramp_Smoothness: 0
+    - _Ambient: 0
     - _BumpScale: 1
     - _Circle_Density: 5
     - _Cutoff: 0.5
@@ -104,6 +105,7 @@ Material:
     - _Softness: 0.19
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _ToonRampOffsetPoint: 0.2
     - _USE_SCREEN_SPACE: 0
     - _UVSec: 0
     - _ZWrite: 1
