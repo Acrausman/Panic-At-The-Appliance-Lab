@@ -31,6 +31,8 @@ public class playerBehavior : MonoBehaviour
     public float holdTime;
     public float jumpForce;
     public float airMultiplier;
+    public float airTime;
+    public float timeUntilFastfall;
     public float playerHeight;
     public LayerMask whatIsGround;
     public bool grounded;
@@ -54,6 +56,7 @@ public class playerBehavior : MonoBehaviour
         rb.freezeRotation = true;
         readyToFire = true;
         holdTime = 0;
+        airTime = 0;
         data = gameObject.GetComponent<playerData>();
 
     }
@@ -137,10 +140,25 @@ public class playerBehavior : MonoBehaviour
         Vector3 newForce = new Vector3(moveDir.x, 0, moveDir.z);
 
         //Check if grounded and move
-        if (grounded) rb.drag = groundDrag;
+        if (grounded)
+        {
+            rb.drag = groundDrag; 
+            rb.useGravity = true;
+            airTime = 0;
+        }
         else rb.drag = 0;
         if (grounded) rb.AddForce((newForce * movementSpeed) * Time.deltaTime, ForceMode.Force);
         else if (!grounded) rb.AddForce((newForce * movementSpeed * airMultiplier) * Time.deltaTime, ForceMode.Force);
+        if(!grounded && airTime < timeUntilFastfall)
+        {
+            rb.useGravity = true;
+            airTime += 1 * Time.deltaTime;
+        }
+        else
+        {
+            rb.useGravity = false;
+            rb.AddForce(Physics.gravity * (rb.mass * rb.mass));
+        }
 
         SpeedControl();
     }

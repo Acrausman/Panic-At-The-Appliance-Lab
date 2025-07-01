@@ -152,7 +152,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -2753433626723538070, guid: a37ab18050e77494d9ae67f555450436, type: 3}
+  m_Motion: {fileID: 4393684945986878726, guid: 328c6532f8ce00c4b95c8cd6521fbc9c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -205,7 +205,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -8241734467505883131, guid: a37ab18050e77494d9ae67f555450436, type: 3}
+  m_Motion: {fileID: -68820308628855420, guid: 328c6532f8ce00c4b95c8cd6521fbc9c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -242,7 +242,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Gatling
+  m_Name: Gatling_AnimControl2
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: reload
@@ -401,7 +401,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -3372912201471737086, guid: a37ab18050e77494d9ae67f555450436, type: 3}
+  m_Motion: {fileID: -4796177154748048171, guid: 328c6532f8ce00c4b95c8cd6521fbc9c, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
