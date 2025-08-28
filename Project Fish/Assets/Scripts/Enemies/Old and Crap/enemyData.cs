@@ -24,6 +24,7 @@ public class enemyData : MonoBehaviour
 
     public void takeDamage(float amount)
     {
+        Debug.Log("Enemy took " + amount + " damage");
         audioSource.PlayOneShot(hitSound);
         currHealth -= amount;
         if (currHealth <= 0)

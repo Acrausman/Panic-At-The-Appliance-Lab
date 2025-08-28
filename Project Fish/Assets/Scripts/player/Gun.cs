@@ -84,11 +84,15 @@ public class Gun : MonoBehaviour
         {
             targetPoint = hit.point;
             lineRenderer.SetPosition(1, hit.point);
-            Enemy hitTarget = hit.transform.gameObject.GetComponent<Enemy>();
-            if (hitTarget != null) hitTarget.takeDamage(damage);
+            enemyData hitTarget = hit.transform.gameObject.GetComponent<enemyData>();
+            if (hitTarget != null)hitTarget.takeDamage(damage);
+            
         }
         else
         {
+            /*Debug.Log("Miss");
+            Debug.DrawRay(rayOrigin, cam.transform.forward * range, Color.red);
+            */
             targetPoint = ray.GetPoint(range);
             lineRenderer.SetPosition(1, rayOrigin + (cam.transform.forward * range));
         }
