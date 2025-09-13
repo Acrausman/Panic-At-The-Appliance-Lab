@@ -38,7 +38,10 @@ public class enemyData : MonoBehaviour
             else
             {
                 Vector3 spawnVect = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-                GameObject death = Instantiate(deathPrefab, spawnVect, Quaternion.identity);
+                if (deathPrefab != null)
+                {
+                    GameObject death = Instantiate(deathPrefab, spawnVect, Quaternion.identity);
+                }
                 Destroy(gameObject);
             }
                
