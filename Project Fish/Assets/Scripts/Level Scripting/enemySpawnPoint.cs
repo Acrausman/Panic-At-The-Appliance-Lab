@@ -2,19 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum enemyType
+{
+    spawnNothing,
+    coffeMaker,
+    airFryer,
+    iron,
+    toaster,
+    printer,
+    biggChills
+}
+
 public class enemySpawnPoint : MonoBehaviour
 {
-    public enum enemyType
-    {
-        coffeMaker,
-        airFryer,
-        iron,
-        toaster,
-        printer,
-        biggChills
-    }
+    public enemyType[] spawnWaves;
 
-    public enemyType typeToSpawn;
+    //public enemyType typeToSpawn;
 
     void Start()
     {

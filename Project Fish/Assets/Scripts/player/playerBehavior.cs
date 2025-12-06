@@ -22,7 +22,10 @@ public class playerBehavior : MonoBehaviour
     Vector3 moveDireciton;
 
     //Movement Variables
-    public float movementSpeed;
+    public float baseMovementSpeed;
+    public float currentBoost; //temporarily multiplied to movement speed, can quickly atrophy over time down to 1.0 (100% base movement speed)
+    public float boostLife; //time in seconds a boost effect lasts for. currently implemented to go from full boost amount down to none instantly upon boost ending.
+    public float movementSpeed; //actual movement speed used for physics calculations. Updated every second based on boost changes, base move speed * current boost.
     public float currVelocity;
     public float groundDrag;
     public float maxGroundDrag;
@@ -57,12 +60,25 @@ public class playerBehavior : MonoBehaviour
         readyToFire = true;
         holdTime = 0;
         airTime = 0;
+        currentBoost = 1;
         data = gameObject.GetComponent<playerData>();
 
     }
 
     private void Update()
     {
+        //check + update boost before parsing velocity for frame
+        if (boostLife > 0) {
+            boostLife -= Time.deltaTime;
+            print("Boost Life Left: " + boostLife);
+            if (boostLife <= 0) {
+                currentBoost = 1;
+            }
+        }
+
+        print("Current Boost:" + currentBoost);
+        movementSpeed = baseMovementSpeed * currentBoost;
+
         currVelocity = getVelocity();
         movePlayer();
         if (Input.GetButtonDown("Weapon 1") | Input.GetButtonDown("Weapon 2")| Input.GetButtonDown("Weapon 3") | Input.GetButtonDown("Weapon 4"))
@@ -242,6 +258,18 @@ public class playerBehavior : MonoBehaviour
             StartCoroutine((gunRecharge()));
         }
 
+    }
+
+    public void boost(float boostAmount, float boostLength)
+    {
+        currentBoost = boostAmount;
+        boostLife = boostLength;
+    }
+
+    //function for other objects like conveyer belts or boost pads to add a specified force to the rigidbody while active.
+    public void addForce(Vector3 sentForce)
+    {
+        rb.AddForce((sentForce) * Time.deltaTime, ForceMode.Impulse);
     }
 
 
