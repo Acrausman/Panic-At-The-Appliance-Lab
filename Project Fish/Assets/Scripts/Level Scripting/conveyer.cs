@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class conveyer : MonoBehaviour
 {
-    //public Transform GameObject;
-    public float forceAmount; //factor to determine how strong of a force should be added to the character. 
-    public float forceDirectionOffset; //optional float to override expected direction of the boost, in degrees. Should usually be 0, to move the player in the y-rotation direction of the conveyer belt object (i.e. toward the red arrow).
+    public float speed = 2.0f;
 
-    private void OnTriggerStay(Collider other)
+    void FixedUpdate()
+    {
+        GetComponent<Rigidbody>().position -= transform.forward * speed * Time.deltaTime;
+        GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + transform.forward * speed * Time.deltaTime);
+    }
+    //public Transform GameObject;
+    //public float forceAmount; //factor to determine how strong of a force should be added to the character. 
+    //public float forceDirectionOffset; //optional float to override expected direction of the boost, in degrees. Should usually be 0, to move the player in the y-rotation direction of the conveyer belt object (i.e. toward the red arrow).
+
+    /*private void OnTriggerStay(Collider other)
     {
         //print("Hit");
         if (other.CompareTag("Player"))
@@ -20,17 +27,5 @@ public class conveyer : MonoBehaviour
             other.GetComponentInParent<playerBehavior>().addForce(newForce);
         }
 
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    }*/
 }
